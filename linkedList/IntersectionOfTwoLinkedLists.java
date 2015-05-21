@@ -1,6 +1,5 @@
 package leetcode.linkedList;
 
-import java.io.ObjectInputStream.GetField;
 
 /*
  * Write a program to find the node at which the intersection of two singly linked lists begins.
