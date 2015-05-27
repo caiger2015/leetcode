@@ -40,7 +40,6 @@ public class RotateArray {
 	/*
 	 * 从结果来看，第i个元素的最终位置是（i+k）%n）
 	 * 所以只要遍历完每个元素确定位置即可
-	 * 要看到问题的本质找规律
 	 */
 	public static void rotate3(int[]nums ,int k)
 	{
