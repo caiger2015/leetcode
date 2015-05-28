@@ -1,4 +1,4 @@
-package leetcode.DynamicProgramming;
+package leetcode.dynamicProgramming;
 /*
  * 动态规划问题，转化为若干个递推的子问题，
  * 找出递推公式，确定初始条件，逐步退出各阶段的结果直到最后

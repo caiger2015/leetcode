@@ -2,7 +2,7 @@
  * 背包问题：n件（唯一）不同价值不同重量的物品放入容量c的背包，求出最大价值
  * @caiger
  */
-package leetcode.DynamicProgramming;
+package leetcode.dynamicProgramming;
 
 public class Bagpack {
 

@@ -4,7 +4,7 @@
  * @author caiger
  * 
  */
-package leetcode.DynamicProgramming;
+package leetcode.dynamicProgramming;
 
 import java.util.Arrays;
 import java.util.Scanner;

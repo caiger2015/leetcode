@@ -1,4 +1,4 @@
-package leetcode.DynamicProgramming;
+package leetcode.dynamicProgramming;
 
 public class ClimbingStairs {
 
