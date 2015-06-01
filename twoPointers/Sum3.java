@@ -21,7 +21,8 @@ public class Sum3 {
 			return res;
 		Arrays.sort(num);//排序数组，对有序数组进行查找效率高
 		int len=num.length;
-		for(int i=0;i<len-2;i++){
+		for(int i=0;i<len-2&&num[i]<=0;i++){
+			//排出重复的结果
 			if(i>0&&num[i]==num[i-1])
 				continue;
 			find(num,i+1,len-1,num[i]);
@@ -37,6 +38,7 @@ public class Sum3 {
 				ans.add(num[begin]);
 				ans.add(num[end]);
 				res.add(ans);
+				//排除相同的搜索
 				while(begin<end&&num[begin]==num[begin+1])
 					begin++;
 				while(begin<end&&num[end]==num[end-1])
