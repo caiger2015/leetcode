@@ -1,7 +1,6 @@
 package leetcode.hashTable;
 
 import java.util.HashMap;
-import java.util.*;
 import java.util.Map;
 
 public class TwoSum {
