@@ -1,22 +1,18 @@
 package leetcode.tree;
 
-import java.util.*;
-
-import leetcode.tree.SameTree.TreeNode;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Stack;
 
 
 /*
  * Given a binary tree, return the level order traversal of its nodes' values.
  */
-public class LevelOrder {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		TreeNode root=new TreeNode(1);
-		root.left=new TreeNode(2);
-		levelOrder(root);
-	}
-	public static List<List<Integer>> levelOrder(TreeNode root){
+public class LevelorderTraversal {
+	
+	public List<List<Integer>> levelorderTraversal(TreeNode root){
 		List<List<Integer>> res=new ArrayList<List<Integer>>();
 		if(root==null)
 			return res;
@@ -47,7 +43,7 @@ public class LevelOrder {
 		}
 		return res;
 	}
-	public static List<List<Integer>> levelOrderBottom(TreeNode root){
+	public List<List<Integer>> levelOrderBottom(TreeNode root){
 		List<List<Integer>> res=new ArrayList<List<Integer>>();
 		if(root==null)
 			return res;

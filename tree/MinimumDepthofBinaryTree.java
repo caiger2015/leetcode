@@ -1,6 +1,5 @@
 package leetcode.tree;
 
-import leetcode.tree.SameTree.TreeNode;
 
 public class MinimumDepthofBinaryTree {
 

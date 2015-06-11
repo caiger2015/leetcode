@@ -1,8 +1,7 @@
 package leetcode.tree;
 
-import java.util.*;
-
-import leetcode.tree.SameTree.TreeNode;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author caiger

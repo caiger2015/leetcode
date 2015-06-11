@@ -2,8 +2,6 @@ package leetcode.tree;
 
 import java.util.ArrayList;
 
-import leetcode.tree.SameTree.TreeNode;
-
 public class MaxDepth {
 
 	public static void main(String[] args) {

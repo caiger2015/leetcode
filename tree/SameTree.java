@@ -1,5 +1,4 @@
 package leetcode.tree;
-
 public class SameTree {
 
 	public static void main(String[] args) {
@@ -21,13 +20,7 @@ public class SameTree {
 			return false;
 			
 	}
-	//Definition for a binary tree node.
-	public static class TreeNode {
-		int val;
-	    TreeNode left;
-	    TreeNode right;
-	    TreeNode(int x) { val = x; }
-	}
 }
+
 
 	 

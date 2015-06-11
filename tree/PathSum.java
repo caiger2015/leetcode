@@ -3,7 +3,6 @@
  */
 package leetcode.tree;
 
-import leetcode.tree.SameTree.TreeNode;
 
 /**
  *@author caiger
