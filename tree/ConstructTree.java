@@ -40,12 +40,13 @@ public class ConstructTree {
     	TreeNode temp;
     	while(!que.isEmpty()&&i<n){
     		temp=que.poll();
-    		if(s.charAt(i)!='#'&&i<n){
+    		//越界的判定放在&&的前边
+    		if(i<n&&s.charAt(i)!='#'){
     			temp.left=new TreeNode(s.charAt(i)-'0');
     			que.add(temp.left);
     		}
     		i++;
-    		if(s.charAt(i)!='#'&&i<n){
+    		if(i<n&&s.charAt(i)!='#'){
     			temp.right=new TreeNode(s.charAt(i)-'0');
     			que.add(temp.right);
     		}
