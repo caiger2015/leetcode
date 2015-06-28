@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package leetcode.tree;
 
 /**
@@ -9,9 +7,6 @@ package leetcode.tree;
  */
 public class PopulatingNextRightPointersinEachNode {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
 	}
