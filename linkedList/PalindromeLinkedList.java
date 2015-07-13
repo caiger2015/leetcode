@@ -10,7 +10,7 @@ public class PalindromeLinkedList {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ListNode p=new ListNode("1233212");
+		ListNode p=new ListNode("123321");
 		System.out.print(isPalindrome(p)+"  "+p);
 	}
 	public static boolean isPalindrome(ListNode head) {
@@ -37,7 +37,7 @@ public class PalindromeLinkedList {
         ListNode p=pre,q=head;
         while(p!=null&&q!=null){
         	if(p.val!=q.val)
-        		return false;
+        		break;
         	p=p.next;
         	q=q.next;
         }
@@ -49,6 +49,6 @@ public class PalindromeLinkedList {
         	pre2=pre;
         	pre=temp;
         }
-        return true;
+        return p==null||q==null?true:false;
     }
 }
