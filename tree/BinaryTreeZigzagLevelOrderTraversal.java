@@ -32,31 +32,31 @@ public class BinaryTreeZigzagLevelOrderTraversal {
 	 * 逐层遍历，需要记录当前层和下一层的结点数，没完成一层层数加1，奇数层正序，偶数层反序。
 	 */
 	public static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-		if(root==null)
+		if(root == null)
 			return null;
-		List<List<Integer>> res=new LinkedList<List<Integer>>();
+		List<List<Integer>> res = new LinkedList<List<Integer>>();
 		//Deque接口有后进先出的堆栈功能
-		Deque<TreeNode> que=new LinkedList<TreeNode>();
-		TreeNode temp=root;
-		int now=1,next=0,levelCount=1;
+		Deque<TreeNode> que = new LinkedList<TreeNode>();
+		TreeNode temp = root;
+		int now = 1,next = 0,levelCount = 1;
 		que.add(temp);
 		while(!que.isEmpty()){
-			LinkedList<Integer> levelList=new LinkedList<Integer>();
+			LinkedList<Integer> levelList = new LinkedList<Integer>();
 			while(now>0){
-				temp=que.poll();
+				temp = que.poll();
 				now--;
 				addTreeNode(levelList,levelCount,temp.val);
-				if(temp.left!=null){
+				if(temp.left != null){
 					que.add(temp.left);
 					next++;
 				}
-				if(temp.right!=null){
+				if(temp.right != null){
 					que.add(temp.right);
 					next++;
 				}
 			}
-			now=next;
-			next=0;
+			now = next;
+			next = 0;
 			levelCount++;
 			res.add(levelList);
 		}
@@ -69,7 +69,7 @@ public class BinaryTreeZigzagLevelOrderTraversal {
 	 */
 	private static void addTreeNode(LinkedList<Integer> levelList, int levelCount,	int val) {
 		//奇数层正序添加
-		if((levelCount&1)==1)
+		if((levelCount&1) == 1)
 			levelList.add(val);
 		//偶数层逆序添加
 		else

@@ -19,22 +19,22 @@ public class BinarySearchTreeIterator {
 
 	}
 	//存储树中的每个节点
-	private List<Integer> valList=new LinkedList<Integer>();
-	private int index=0;
+	private List<Integer> valList = new LinkedList<Integer>();
+	private int index = 0;
 	//中序遍历BST结果为升序排列
 	public BinarySearchTreeIterator(TreeNode root) {
-	    if(root==null)
+	    if(root == null)
 	          return;
-	    LinkedList<TreeNode> stack=new LinkedList<TreeNode>();
-	    TreeNode temp=root;
-	    while(temp!=null||!stack.isEmpty()){
-	    	while(temp!=null){
+	    LinkedList<TreeNode> stack = new LinkedList<TreeNode>();
+	    TreeNode temp = root;
+	    while(temp != null||!stack.isEmpty()){
+	    	while(temp != null){
 	    		stack.push(temp);
-	    		temp=temp.left;
+	    		temp = temp.left;
 	    	}
-	        temp=stack.pop();
+	        temp = stack.pop();
 	        valList.add(temp.val);
-	        temp=temp.right;
+	        temp = temp.right;
 	    }
 	}
 
@@ -56,7 +56,7 @@ public class BinarySearchTreeIterator {
 }
 	/**
 	 * Your BSTIterator will be called like this:
-	 * BSTIterator i = new BSTIterator(root);
-	 * while (i.hasNext()) v[f()] = i.next();
+	 * BSTIterator i  =  new BSTIterator(root);
+	 * while (i.hasNext()) v[f()]  =  i.next();
 	 */
 

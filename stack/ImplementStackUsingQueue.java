@@ -16,8 +16,8 @@ public class ImplementStackUsingQueue {
 	}
 }
 class MyStack {
-	private LinkedList<Integer> tempQue=new LinkedList<Integer>();
-	private LinkedList<Integer> topQue=new LinkedList<Integer>();
+	private LinkedList<Integer> tempQue = new LinkedList<Integer>();
+	private LinkedList<Integer> topQue = new LinkedList<Integer>();
     // Push element x onto stack.
 	//这种方法虽然思路简单，但是考虑到stack作为容器的功能，push用到的会比pop多，所以应该进行改进，方式见implement stack using queue
     public void push(int x) {

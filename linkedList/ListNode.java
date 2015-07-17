@@ -6,22 +6,22 @@ package leetcode.linkedList;
  */
 public class ListNode {
 	int val;
-	ListNode next=null;
+	ListNode next = null;
 	public ListNode(int val){
-		this.val=val;
+		this.val = val;
 	}
 	/**
 	 * @param s
 	 * 利用字符串构造链表
 	 */
 	public ListNode(String s){
-		if(s==null||s.length()==0)
+		if(s == null||s.length() == 0)
 			return;
-		this.val=s.charAt(0)-'0';
-		ListNode temp=this;
-		for(int i=1;i<s.length();i++){
-			temp.next=new ListNode(s.charAt(i)-'0');
-			temp=temp.next;
+		this.val = s.charAt(0)-'0';
+		ListNode temp = this;
+		for(int i = 1;i<s.length();i++){
+			temp.next = new ListNode(s.charAt(i)-'0');
+			temp = temp.next;
 		}
 	}
 	/* (non-Javadoc)
@@ -30,12 +30,12 @@ public class ListNode {
 	 */
 	@Override
 	public String toString() {
-		StringBuilder sb=new StringBuilder();
+		StringBuilder sb = new StringBuilder();
 		sb.append("[");
-		ListNode temp=this;
-		while(temp!=null){
+		ListNode temp = this;
+		while(temp != null){
 			sb.append(temp.val+",");
-			temp=temp.next;
+			temp = temp.next;
 		}
 		if(sb.length()>1)
 			sb.deleteCharAt(sb.length()-1);

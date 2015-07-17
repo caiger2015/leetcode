@@ -14,20 +14,20 @@ public class SummaryRanges {
 		
 	}
     public List<String> summaryRanges(int[] nums) {
-        List<String> res=new ArrayList<String>();
-        if(nums==null||nums.length==0)
+        List<String> res = new ArrayList<String>();
+        if(nums == null||nums.length == 0)
             return res;
-        int i=0;
+        int i = 0;
         //Tips：循环要考虑一般情况，不能只考虑初始情况！
         //		外层循环控制每次存储结果
         //		内层循环构造每次结果
         while(i<nums.length){
-            StringBuilder s=new StringBuilder();
-            int start=nums[i++];
+            StringBuilder s = new StringBuilder();
+            int start = nums[i++];
             s.append(start);
-            while(i<nums.length&&nums[i]==nums[i-1]+1)
+            while(i<nums.length&&nums[i] == nums[i-1]+1)
                 i++;
-            int end=nums[i-1];
+            int end = nums[i-1];
             if(end>start)
                 s.append("->"+end);
             res.add(s.toString());

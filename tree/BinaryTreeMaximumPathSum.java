@@ -12,9 +12,9 @@ public class BinaryTreeMaximumPathSum {
 	public static void main(String[] args) {
 
 	}
-	private int max=Integer.MIN_VALUE;
+	private int max = Integer.MIN_VALUE;
 	public int maxPathSum(TreeNode root){
-		if(root==null)
+		if(root == null)
 			return 0;
 		dfs(root);
 		return max;
@@ -26,17 +26,17 @@ public class BinaryTreeMaximumPathSum {
 	 *			   由于先要求出左右子结点的路径和，故采用后序遍历的DFS
 	 */
 	private int dfs(TreeNode root) {
-		if(root==null)
+		if(root == null)
 			return 0;
-		int left=dfs(root.left);
-		int right=dfs(root.right);
-		int curMax=root.val;
+		int left = dfs(root.left);
+		int right = dfs(root.right);
+		int curMax = root.val;
 		if(left>0)
-			curMax+=left;
+			curMax += left;
 		if(right>0)
-			curMax+=right;
+			curMax += right;
 		//比较每个子问题的最大路径和，更新max
-		max=Math.max(max, curMax);
+		max = Math.max(max, curMax);
 		//返回以root为子结点的一侧路径最大值
 		return Math.max(left+root.val,Math.max(right+root.val,root.val));
 	}

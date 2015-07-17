@@ -1,7 +1,7 @@
 package leetcode.array;
 /*
  * Rotate an array of n elements to the right by k steps.
-	For example, with n = 7 and k = 3, 
+	For example, with n  =  7 and k  =  3, 
 	the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
  */
 
@@ -17,9 +17,9 @@ public class RotateArray {
 	 */
 	public void rotate(int[]nums,int k)
 	{
-		int n=nums.length;
-		k%=n;
-		if(nums==null||k<=0||n<=1)
+		int n = nums.length;
+		k%= n;
+		if(nums == null||k<= 0||n<= 1)
 			return;
 		reverse(nums, 0, n-1);
 		reverse(nums, 0, k-1);
@@ -30,9 +30,9 @@ public class RotateArray {
 	{
 		while(left<right)
 		{
-			int temp=A[left];
-			A[left]=A[right];
-			A[right]=temp;
+			int temp = A[left];
+			A[left] = A[right];
+			A[right] = temp;
 			left++;
 			right--;
 		}
@@ -43,31 +43,31 @@ public class RotateArray {
 	 */
 	public static void rotate3(int[]nums ,int k)
 	{
-		int n=nums.length;
+		int n = nums.length;
 		/*
 		 * 别忘记！！！判断特殊情况，null,0,Integer.MINVALUE等
 		 */
-		if(nums==null||k<=0||n<=0)
+		if(nums == null||k<= 0||n<= 0)
 			return;
-		int start=0;
-		k%=n;
-		int next=start;
+		int start = 0;
+		k%= n;
+		int next = start;
 		/*
 		 * 遍历一次，经过的是（next+k）%n 间隔为k的数，
 		 * 从第一个数start开始 ，遍历完必然会回到start
 		 */
-		int temp=nums[start];
-		for(int i=0;i<n;i++)
+		int temp = nums[start];
+		for(int i = 0;i<n;i++)
 		{
-			next=(next+k)%n;
-			int temp2=nums[next];
-			nums[next]=temp;
-			temp=temp2;
-			if(start==next)
+			next = (next+k)%n;
+			int temp2 = nums[next];
+			nums[next] = temp;
+			temp = temp2;
+			if(start == next)
 			{
 				start++;
-				next=start%n;//不要越界
-				temp=nums[next];
+				next = start%n;//不要越界
+				temp = nums[next];
 			}
 		}
 	}
@@ -76,19 +76,19 @@ public class RotateArray {
 	 */
 	public void rotate2(int[] nums,int k)
 	{	
-		int n=nums.length;
-		int[] temp=new int[n];
-		for(int i=0;i<k;i++)
+		int n = nums.length;
+		int[] temp = new int[n];
+		for(int i = 0;i<k;i++)
 		{
-			temp[i]=nums[n-k+i];
+			temp[i] = nums[n-k+i];
 		}
-		for(int j=k;j<n;j++)
+		for(int j = k;j<n;j++)
 		{
-			temp[j]=nums[j-k];
+			temp[j] = nums[j-k];
 		}
-		for(int i=0;i<n;i++)
+		for(int i = 0;i<n;i++)
 		{
-			nums[i]=temp[i];
+			nums[i] = temp[i];
 		}
 	}
 	/*
@@ -96,17 +96,17 @@ public class RotateArray {
 	 */
 	public static void rotate1(int[] nums,int k)
 	{
-		k%=nums.length;
+		k%= nums.length;
 		while(k>0)
 		{
-			int i=0;
-			int temp=nums[i];
+			int i = 0;
+			int temp = nums[i];
 			while(i<nums.length-1)
 			{
-				nums[i]=nums[i+1];
+				nums[i] = nums[i+1];
 				i++;
 			}
-			nums[i]=temp;
+			nums[i] = temp;
 			k--;
 		}
 	}

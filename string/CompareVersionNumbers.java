@@ -19,29 +19,29 @@ public class CompareVersionNumbers {
 	}
 	/**
 	 * description：用“."来分隔父子版本，同级的版本号之间比较大小，相同则继续比较下一级；
-	 * 				注意处理好版本号中的“0”，开头，结尾，单独的全0版本（01.01.000.00==1.1）
+	 * 				注意处理好版本号中的“0”，开头，结尾，单独的全0版本（01.01.000.00 == 1.1）
 	 * @param v1 要比较的字符串
 	 * @param v2 要比较的字符串
 	 * @return	v1>v2 返回1，v1<v2返回-1，否则返回0
 	 */
 	public static int compareVersion(String v1,String v2){
-		if(v1==null||v2==null)
+		if(v1 == null||v2 == null)
 			return 0;
-		int n=v1.length();
-		int m=v2.length();
-		int i=0,j=0;
+		int n = v1.length();
+		int m = v2.length();
+		int i = 0,j = 0;
 		while(i<n&&j<m){
-			int t1=0;
-			while(i<n&&v1.charAt(i)!='.'){
-				t1=t1*10+v1.charAt(i)-'0';
+			int t1 = 0;
+			while(i<n&&v1.charAt(i) != '.'){
+				t1 = t1*10+v1.charAt(i)-'0';
 				i++;
 			}
-			int t2=0;
-			while(j<m&&v2.charAt(j)!='.'){
-				t2=t2*10+v2.charAt(j)-'0';
+			int t2 = 0;
+			while(j<m&&v2.charAt(j) != '.'){
+				t2 = t2*10+v2.charAt(j)-'0';
 				j++;
 			}
-			if(t1==t2){
+			if(t1 == t2){
 				i++;
 				j++;
 				continue;
@@ -52,9 +52,9 @@ public class CompareVersionNumbers {
 				return 1;
 		}
 		//循环结束分别分析两个条件，处理未到头的部分是否版本全是0
-		while(i<n&&(v1.charAt(i)=='0'||v1.charAt(i)=='.'))
+		while(i<n&&(v1.charAt(i) == '0'||v1.charAt(i) == '.'))
 			i++;
-		while(j<m&&(v2.charAt(j)=='0'||v2.charAt(j)=='.'))
+		while(j<m&&(v2.charAt(j) == '0'||v2.charAt(j) == '.'))
 			j++;
 		if(i<n)
 			return 1;

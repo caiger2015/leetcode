@@ -39,21 +39,21 @@ public class FlattenBinaryTreetoLinkedList {
 	 * 先序遍历时，右结点在左子树最右边的那个节点的下一个
 	 */
 	public static void flattenTreeToLinkedList(TreeNode root){
-		if(root==null)
+		if(root == null)
 			return;
-		if(root.left!=null){
-			TreeNode right=root.right;
-			root.right=root.left;
-			TreeNode mostRight=root.left;
-			root.left=null;
+		if(root.left != null){
+			TreeNode right = root.right;
+			root.right = root.left;
+			TreeNode mostRight = root.left;
+			root.left = null;
 			//找到左子树最右边的结点，即为右孩子结点在linkedlist中的前一个节点
-			while(mostRight.right!=null||mostRight.left!=null){
-				if(mostRight.right!=null)
-					mostRight=mostRight.right;
+			while(mostRight.right != null||mostRight.left != null){
+				if(mostRight.right != null)
+					mostRight = mostRight.right;
 				else
-					mostRight=mostRight.left;
+					mostRight = mostRight.left;
 			}
-			mostRight.right=right;
+			mostRight.right = right;
 			flattenTreeToLinkedList(root.right);
 		}
 	}

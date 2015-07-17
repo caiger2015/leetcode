@@ -16,9 +16,9 @@ public class PathSum2 {
 		
 	}
 	public List<List<Integer>> pathSum(TreeNode root,int sum){
-		List<List<Integer>> res=new ArrayList<List<Integer>>();
+		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		//先根顺序遍历二叉树，递归方法
-		List<Integer> path=new ArrayList<Integer>();
+		List<Integer> path = new ArrayList<Integer>();
 		getPath(root,res,sum,path);
 		return res;
 	}
@@ -34,22 +34,22 @@ public class PathSum2 {
 	 */
 	private void getPath(TreeNode p, List<List<Integer>> res, int sum, List<Integer> path) {
 		//开始
-		if(p==null)
+		if(p == null)
 			return;
 		//进入
-		sum-=p.val;
+		sum -= p.val;
 		path.add(p.val);
-		if(p.left==null&&p.right==null&&sum==0){
+		if(p.left == null&&p.right == null&&sum == 0){
 			//每次在res中加入new的path路径
 			res.add(new ArrayList<Integer>(path));
 		}
-		if(p.left!=null){
+		if(p.left != null){
 			getPath(p.left,res,sum,path);
 			//一次递归结束时移除这次递归时加入到path中的元素，索引为最后一位
 			//sum因为是基本类型，值传递，不需要进行维护
 			path.remove(path.size()-1);
 		}
-		if(p.right!=null){
+		if(p.right != null){
 			getPath(p.right,res,sum,path);
 			//跳出
 			path.remove(path.size()-1);

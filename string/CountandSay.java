@@ -17,16 +17,16 @@ public class CountandSay {
 	}
 	public static String countAndSay(int n)
 	{
-		//if(n==0)
+		//if(n == 0)
 		//	return "";
-		StringBuilder result=new StringBuilder("1");//第一个
-		for(int i=0;i<n-1;i++)//剩下的n-1个
+		StringBuilder result = new StringBuilder("1");//第一个
+		for(int i = 0;i<n-1;i++)//剩下的n-1个
 		{
-			StringBuilder temp=new StringBuilder();
-			for(int j=0;j<result.length();)
+			StringBuilder temp = new StringBuilder();
+			for(int j = 0;j<result.length();)
 			{
-				int k=1;
-				while(j<result.length()-1&&result.charAt(j)==result.charAt(j+1))
+				int k = 1;
+				while(j<result.length()-1&&result.charAt(j) == result.charAt(j+1))
 				{
 					j++;k++;
 				}
@@ -34,7 +34,7 @@ public class CountandSay {
 				temp.append(result.charAt(j));
 				j++;
 			}
-			result=temp;
+			result = temp;
 		}
 		return result.toString();
 	}

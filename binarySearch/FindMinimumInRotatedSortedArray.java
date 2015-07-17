@@ -7,18 +7,18 @@ public class FindMinimumInRotatedSortedArray {
 
 	}
 	public static int findMin(int[] nums){
-		if(nums==null||nums.length==0)
+		if(nums == null||nums.length == 0)
 			return 0;
-		int left=0,right=nums.length-1;
-		if(nums[left]<=nums[right])
+		int left = 0,right = nums.length-1;
+		if(nums[left]<= nums[right])
 			return nums[left];
 		while(left<right-1){
-			int mid=(left+right)/2;
+			int mid = (left+right)/2;
 			if(nums[left]<nums[mid]){
-				left=mid;
+				left = mid;
 			}
 			else{
-				right=mid;
+				right = mid;
 			}
 		}
 		return Math.min(nums[left],nums[right]);

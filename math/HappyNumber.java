@@ -9,18 +9,18 @@ public class HappyNumber {
 		System.out.print(isHappyNumber(7));
 	}
 	public static boolean isHappyNumber(int n){
-		HashSet<Integer> set=new HashSet<Integer>();
+		HashSet<Integer> set = new HashSet<Integer>();
 		while(set.add(n)){
-			int temp=n,res=0;
+			int temp = n,res = 0;
 			while(temp>0){
 				//这个是去比特位末位的
-				//res+=(temp&1)*(temp&1);
-				res+=(temp%10)*(temp%10);
-				temp/=10;
+				//res += (temp&1)*(temp&1);
+				res += (temp%10)*(temp%10);
+				temp /= 10;
 			}
-			n=res;
+			n = res;
 		}
-		return n==1;
+		return n == 1;
 	}
 
 }

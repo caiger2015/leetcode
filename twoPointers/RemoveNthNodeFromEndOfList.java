@@ -18,43 +18,43 @@ public class RemoveNthNodeFromEndOfList {
 	static class ListNode {
 	     int val;
 	     ListNode next;
-	     ListNode(int x) { val = x; }
+	     ListNode(int x) { val  =  x; }
 	 }
 	 
 	public static ListNode removeNthFromEnd(ListNode headListNode ,int n)
 	{
-	    if(headListNode == null || n == 0)//防御性编程，增加健壮性  
+	    if(headListNode  ==  null || n  ==  0)//防御性编程，增加健壮性  
 	        return headListNode;  
 	    /*
 	     * 没必要这样做，并没有改变first和second的实例域,不需要新建实例对象
 	     *
-		ListNode first=new ListNode(headListNode.val);
-		ListNode second=new ListNode(headListNode.val);
-		first.next=headListNode.next;
-		second.next=headListNode.next;
+		ListNode first = new ListNode(headListNode.val);
+		ListNode second = new ListNode(headListNode.val);
+		first.next = headListNode.next;
+		second.next = headListNode.next;
 		*/
-	    ListNode first=headListNode;
-	    ListNode second=headListNode;
-		int index=1;
-		while(index!=n)//Given n will always be valid.
+	    ListNode first = headListNode;
+	    ListNode second = headListNode;
+		int index = 1;
+		while(index != n)//Given n will always be valid.
 		{
-			first=first.next;
+			first = first.next;
 			index++;
 		}
-		ListNode parent=null;
-		while(first.next!=null)
+		ListNode parent = null;
+		while(first.next != null)
 		{
-			first=first.next;
-			parent=second;
-			second=second.next;
+			first = first.next;
+			parent = second;
+			second = second.next;
 		}
-		if(parent==null)
+		if(parent == null)
 		{
-			headListNode=headListNode.next;
+			headListNode = headListNode.next;
 			return headListNode;
 		}
 		else {
-			parent.next=second.next;
+			parent.next = second.next;
 			return headListNode;
 		}
 	}

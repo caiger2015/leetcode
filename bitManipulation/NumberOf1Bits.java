@@ -11,13 +11,13 @@ public class NumberOf1Bits {
 	}
 	public static int hammingWeight(int n)
 	{
-		if(n==Integer.MIN_VALUE)
+		if(n == Integer.MIN_VALUE)
 			return 1;
-		int result=0;
-		while(n!=0)//useing "!=" to avoid considerring whether n is positive or negtive
+		int result = 0;
+		while(n != 0)//useing " != " to avoid considerring whether n is positive or negtive
 		{
-			result+=n&1;//checkout the last bit
-			n=n>>>1;// ">>>" the highest bit if filled with 0,instead of 1 using >>
+			result += n&1;//checkout the last bit
+			n = n>>>1;// ">>>" the highest bit if filled with 0,instead of 1 using >>
 		}
 		return result;
 	}

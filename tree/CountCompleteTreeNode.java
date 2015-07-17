@@ -24,19 +24,19 @@ public class CountCompleteTreeNode {
 	 * @return	以该结点为根的二叉树的结点个数
 	 */
 	public static int countNodes(TreeNode root){
-		if(root==null)
+		if(root == null)
 			return 0;
-		int left=0,right=0;
-		TreeNode templ=root,tempr=root;
-		while(templ!=null){
+		int left = 0,right = 0;
+		TreeNode templ = root,tempr = root;
+		while(templ != null){
 			left++;
-			templ=templ.left;
+			templ = templ.left;
 		}
-		while(tempr!=null){
+		while(tempr != null){
 			right++;
-			tempr=tempr.right;
+			tempr = tempr.right;
 		}
-		if(left==right)
+		if(left == right)
 			//用pow函数会超时，因为是对2的整数次幂的操作，可以用移位操作来代替！！
 			//return (int)Math.pow(2, left)-1;
 			return (1<<left)-1;

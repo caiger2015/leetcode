@@ -9,8 +9,8 @@ public class ReverseBits {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int i=1;
-		int j=i<<1;//result：i=1；j=2；
+		int i = 1;
+		int j = i<<1;//result：i = 1；j = 2；
 		System.out.println(i+"  "+j);
 		System.out.print(reverseBits1(-2147483647)+"");
 	}
@@ -25,29 +25,29 @@ public class ReverseBits {
 	 * 等效为移位32-2位
 	 */
 	public static int reverseBits(int n) {
-        int i=0;
-        int res=0;
-            res=(n&1);//去最低位
+        int i = 0;
+        int res = 0;
+            res = (n&1);//去最低位
             i++;
-        while(n!=0&&i<32)//一次取最高位，终止条件是n=0，或已经移位32次
+        while(n != 0&&i<32)//一次取最高位，终止条件是n = 0，或已经移位32次
         {
-            res=res<<1;
-            res|=(n>>>1)&1;//补充最低位
-            n>>>=1;
+            res = res<<1;
+            res |= (n>>>1)&1;//补充最低位
+            n>>>= 1;
             i++;
         }
-        res=res<<(32-i);
+        res = res<<(32-i);
         return res;        
     }
 	/*
 	 * 分治法：每次分两组交换，知道交换的是两位bit
 	 */
 	public static int reverseBits1(int n){
-		n=(n>>>16)&0x0000ffff|(n<<16)&0xffff0000;
-		n=(n>>>8)&0x00ff00ff|(n<<8)&0xff00ff00;
-		n=(n>>>4)&0x0f0f0f0f|(n<<4)&0xf0f0f0f0;
-		n=(n>>>2)&0x33333333|(n<<2)&0xcccccccc;
-		n=(n>>>1)&0x55555555|(n<<1)&0xaaaaaaaa;
+		n = (n>>>16)&0x0000ffff|(n<<16)&0xffff0000;
+		n = (n>>>8)&0x00ff00ff|(n<<8)&0xff00ff00;
+		n = (n>>>4)&0x0f0f0f0f|(n<<4)&0xf0f0f0f0;
+		n = (n>>>2)&0x33333333|(n<<2)&0xcccccccc;
+		n = (n>>>1)&0x55555555|(n<<1)&0xaaaaaaaa;
 		return n;
 	}
 }

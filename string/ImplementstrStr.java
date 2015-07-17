@@ -12,24 +12,24 @@ public class ImplementstrStr {
 	 * @return	n在s中第一次出现时s中第一个字符的位置，不存在时返回-1
 	 */
 	public static int strStr(String s,String n){
-		if(s==null)
+		if(s == null)
 			return -1;
-		if(n==null||n.length()==0)
+		if(n == null||n.length() == 0)
 			return 0;
-		int i=0,j=0;
-		int[] next=getNext(n);
+		int i = 0,j = 0;
+		int[] next = getNext(n);
 		while(i<s.length()&&j<n.length()){
-			if(s.charAt(i)==n.charAt(j)||j==-1){
+			if(s.charAt(i) == n.charAt(j)||j == -1){
 				i++;
 				j++;
 			}
 			else{
 				//
-				j=next[j];
+				j = next[j];
 			}
 		}
-		if(j==n.length())
-			return i=j;
+		if(j == n.length())
+			return i = j;
 		return -1;
 	}
 	/**
@@ -39,28 +39,28 @@ public class ImplementstrStr {
 	 * 		     转而比较next[i]位置的子串元素
 	 */
 	private static int[] getNext(String n) {
-		int[] next =new int[n.length()];
-		next[0]=0;
-		int j=0,k=-1;
+		int[] next  = new int[n.length()];
+		next[0] = 0;
+		int j = 0,k = -1;
 		while(j<n.length()-1){
-			if(n.charAt(j)==n.charAt(k)){
+			if(n.charAt(j) == n.charAt(k)){
 				j++;
 				k++;
-				next[j]=k;
+				next[j] = k;
 			}
 			else{
-				j=next[k];
+				j = next[k];
 			}
 		}
 		//结合主串和子串匹配过程的改进方法:
-		//s[i]!=n[j]时需要寻找下一个n中比较的位置，若n[j]==n[k],则s[i]!=n[k],只需要比较s[i]和n[next[k]]
-//		if(n.charAt(j)==n.charAt(k)){
+		//s[i] != n[j]时需要寻找下一个n中比较的位置，若n[j] == n[k],则s[i] != n[k],只需要比较s[i]和n[next[k]]
+//		if(n.charAt(j) == n.charAt(k)){
 //			j++;
 //			k++;
-//			if(n.charAt(j)==n.charAt(k))
-//				next[j]=next[k];
+//			if(n.charAt(j) == n.charAt(k))
+//				next[j] = next[k];
 //			else {
-//				next[j]=k;
+//				next[j] = k;
 //			}
 //		}		
 		return next;

@@ -18,8 +18,8 @@ public class PostorderTraversal {
 
 	}
 	public List<Integer> postorderTraversal(TreeNode root){
-		List<Integer> res=new ArrayList<Integer>();
-		if(root==null)
+		List<Integer> res = new ArrayList<Integer>();
+		if(root == null)
 			return res;
 		postorderTraversal(root,res);
 		return res;
@@ -29,7 +29,7 @@ public class PostorderTraversal {
 	 * @param res	要返回的list
 	 */
 	private void postorderTraversal(TreeNode root, List<Integer> res) {
-		if(root==null)
+		if(root == null)
 			return;
 		postorderTraversal(root.left,res);
 		postorderTraversal(root.right,res);
@@ -44,25 +44,25 @@ public class PostorderTraversal {
 	 * 否则：将当前栈顶结点的右、左孩子结点入栈
 	 */
 	public List<Integer> postorder_Traversal(TreeNode root){
-		List<Integer> res=new ArrayList<Integer>();
-		if(root==null)
+		List<Integer> res = new ArrayList<Integer>();
+		if(root == null)
 			return res;
-		Stack<TreeNode> stack=new Stack<TreeNode>();
-		TreeNode pre=null;
-		TreeNode cur=root;
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode pre = null;
+		TreeNode cur = root;
 		stack.push(cur);
 		while(!stack.isEmpty()){
-			cur=stack.peek();
-			if(cur.left==null&&cur.right==null||pre!=null&&(pre==cur.left||pre==cur.right)){
+			cur = stack.peek();
+			if(cur.left == null&&cur.right == null||pre != null&&(pre == cur.left||pre == cur.right)){
 				res.add(cur.val);
-				pre=cur;
+				pre = cur;
 				stack.pop();
 				}
 			else {
-				if(cur.right!=null){
+				if(cur.right != null){
 					stack.push(cur.right);
 				}
-				if(cur.left!=null){
+				if(cur.left != null){
 					stack.push(cur.left);
 				}
 			}

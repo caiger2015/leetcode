@@ -8,11 +8,11 @@ public class ExcelSheetColumnNumber {
 	}
 	public static int titleToNumber(String s) 
 	{
-		int res=0;
-		int n=s.length();
-		for(int j=0;j<n;j++)
+		int res = 0;
+		int n = s.length();
+		for(int j = 0;j<n;j++)
 		{
-			res=res*26+(s.charAt(j)-'A'+1);
+			res = res*26+(s.charAt(j)-'A'+1);
 		}
 		return res;
 	}

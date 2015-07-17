@@ -12,7 +12,7 @@ public class ImplementQueueUsingStack {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		MyQueue que=new MyQueue();
+		MyQueue que = new MyQueue();
 		que.push(1);
 		que.push(2);
 		que.pop();
@@ -24,8 +24,8 @@ public class ImplementQueueUsingStack {
 
 }
 class MyQueue {
-	LinkedList<Integer> top = new LinkedList<Integer>();
-	LinkedList<Integer> data = new LinkedList<Integer>();
+	LinkedList<Integer> top  =  new LinkedList<Integer>();
+	LinkedList<Integer> data  =  new LinkedList<Integer>();
 	//利用stack可以换顺序的作用，
 	//top栈按照queue的顺序存储数据，data栈按照stack的顺序存储数据，每当top中没有数据时，将data中的数据倒入top中。
 	// Push element x to the back of queue.

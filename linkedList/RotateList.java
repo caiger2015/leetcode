@@ -4,7 +4,7 @@ package leetcode.linkedList;
  * @author caiger
  *Given a list, rotate the list to the right by k places, where k is non-negative.
 For example:
-Given 1->2->3->4->5->NULL and k = 2,
+Given 1->2->3->4->5->NULL and k  =  2,
 return 4->5->1->2->3->NULL.
  */
 public class RotateList {
@@ -16,23 +16,23 @@ public class RotateList {
 		System.out.print(rotateRight(new ListNode("12345"),3));
 	}
 	public static ListNode rotateRight(ListNode head, int k) {
-        if(head==null||k==0)
+        if(head == null||k == 0)
             return head;
-        int n=1;
-        ListNode last=head;
-        while(last.next!=null){
+        int n = 1;
+        ListNode last = head;
+        while(last.next != null){
             n++;
-            last=last.next;
+            last = last.next;
         }
-        k%=n;
-        last.next=head;
-        ListNode rotatedLast=head;
+        k%= n;
+        last.next = head;
+        ListNode rotatedLast = head;
         while(n-k>1){
-            rotatedLast=rotatedLast.next;
+            rotatedLast = rotatedLast.next;
             k++;
         }
-        ListNode res=rotatedLast.next;
-        rotatedLast.next=null;
+        ListNode res = rotatedLast.next;
+        rotatedLast.next = null;
         return res;
     }
 }

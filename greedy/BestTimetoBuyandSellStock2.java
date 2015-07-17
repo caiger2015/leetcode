@@ -16,37 +16,37 @@ public class BestTimetoBuyandSellStock2 {
 	 * 每一段单调递增的段都是profit
 	 */
 	public static int maxProfit(int[] prices){
-		if(prices==null||prices.length<=1)
+		if(prices == null||prices.length<= 1)
 			return 0;
-		int n=prices.length;
-		int i=1;
-		int profit=0;
-		int buy=prices[0];
+		int n = prices.length;
+		int i = 1;
+		int profit = 0;
+		int buy = prices[0];
 		while(i<n){
-			int pre=prices[i-1];
-			int cur=prices[i];
+			int pre = prices[i-1];
+			int cur = prices[i];
 			if(pre>cur){
-				profit+=(pre-buy);
-				buy=cur;
+				profit += (pre-buy);
+				buy = cur;
 			}
 			i++;
 		}
 		if(prices[n-1]>buy)
-			profit+=(prices[n-1]-buy);
+			profit += (prices[n-1]-buy);
 		return profit;
 	}
 	/*
-	 * 所有增加的部分都是profit，sum=sum+a[i]-a[i-1](if a[i]>a[i-1])
+	 * 所有增加的部分都是profit，sum = sum+a[i]-a[i-1](if a[i]>a[i-1])
 	 */
 	public static int maxPro(int[] prices){
-		if(prices==null||prices.length<=1)
+		if(prices == null||prices.length<= 1)
 			return 0;
-		int i=1;
-		int profit=0;
+		int i = 1;
+		int profit = 0;
 		while(i<prices.length){
-			int diff=prices[i]-prices[i-1];
+			int diff = prices[i]-prices[i-1];
 			if(diff>0)
-				profit+=diff;
+				profit += diff;
 			i++;
 		}
 		return profit;

@@ -13,20 +13,20 @@ public class BalancedBinaryTree {
 
 	}
 	public boolean isBalanced(TreeNode root){
-		if(root==null)
+		if(root == null)
 			return true;
-		return getHeight(root)==-1?false:true;
+		return getHeight(root) == -1?false:true;
 	}
 	//深度优先方式递归遍历左右子树
 	private int getHeight(TreeNode p){
 		//设定递归返回条件
-		if(p==null)
+		if(p == null)
 			return 0;
 		//递归调用
-		int left=getHeight(p.left);
-		int right=getHeight(p.right);
+		int left = getHeight(p.left);
+		int right = getHeight(p.right);
 		//对递归返回结果进行判定
-		if(left==-1||right==-1)
+		if(left == -1||right == -1)
 			return -1;
 		if(Math.abs(left-right)>1)
 			return -1;

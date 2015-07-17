@@ -7,17 +7,17 @@ public class BestTimeToBuyAndSellStock {
 		System.out.print(maxProfit(new int[]{5,4,3,2,1}));
 	}
 	public static int maxProfit(int[] prices) {
-        if(prices==null||prices.length==0)
+        if(prices == null||prices.length == 0)
             return 0;
-		int n=prices.length;
-		int profit=0;
-		int buy=prices[0];
-		for(int i=1;i<n;i++){
-			int sell=prices[i];
-			if(buy>=sell)
-				buy=sell;
+		int n = prices.length;
+		int profit = 0;
+		int buy = prices[0];
+		for(int i = 1;i<n;i++){
+			int sell = prices[i];
+			if(buy>= sell)
+				buy = sell;
 			else{
-				profit=Math.max(profit, sell-buy);
+				profit = Math.max(profit, sell-buy);
 			}
 		}
 		return profit;

@@ -8,7 +8,7 @@ package leetcode.tree;
  *Given n, how many structurally unique BST's (binary search trees) that store values 1...n?
 
 For example,
-Given n = 3, there are a total of 5 unique BST's.
+Given n  =  3, there are a total of 5 unique BST's.
 
    1         3     3      2      1
     \       /     /      / \      \
@@ -28,11 +28,11 @@ public class UniqueBInarySearchTree {
 	 * @return 不同结构的二叉树的个数
 	 */
 	public static int numTrees(int n) {
-        int[] res=new int[n+1];
-        res[0] =1;
-        for(int i=1;i<=n;i++){
-        	for(int j=0;j<i;j++){
-        		res[i]+=res[j]*res[i-j-1];
+        int[] res = new int[n+1];
+        res[0]  = 1;
+        for(int i = 1;i<= n;i++){
+        	for(int j = 0;j<i;j++){
+        		res[i] += res[j]*res[i-j-1];
         	}
         }
         return res[n];

@@ -13,13 +13,13 @@ public class LowestCommonAncestorofaBinarySearchTree {
 
 	}
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        while(root!=null){
-            if(root==p||root==q)
+        while(root != null){
+            if(root == p||root == q)
                 return root;
             if(p.val<root.val&&q.val<root.val)
-                root=root.left;
+                root = root.left;
             else if(p.val>root.val&&q.val>root.val)
-                root=root.right;
+                root = root.right;
             else return root;
             }
         return root;
