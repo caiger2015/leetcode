@@ -13,33 +13,35 @@ import java.util.Stack;
  */
 public class InorderTraversal {
 	public List<Integer> inorderTraversal(TreeNode root) {
-        ArrayList<Integer> res = new ArrayList<Integer>();
-        preOrder(root,res);
-        return res;
-    }
-    private void preOrder(TreeNode p,ArrayList<Integer> res){
-        if(p == null)
-            return;
-        preOrder(p.left,res);
-        res.add(p.val);
-        preOrder(p.right,res);
-    }
-    //循环实现
-    public List<Integer> inorder_Traversal(TreeNode root){
-    	List<Integer> res = new ArrayList<Integer>();
-    	if(root == null)
-    		return res;
-    	Stack<TreeNode> stack = new Stack<TreeNode>();
-    	TreeNode temp = root;
-    	while(temp != null||!stack.isEmpty()){
-    		while(temp != null){
-    			stack.add(temp);
-    			temp = temp.left;
-    		}
-    		temp = stack.pop();
-    		res.add(temp.val);
-    		temp = temp.right;
-    	}
-    	return res;
-    }
+		ArrayList<Integer> res = new ArrayList<Integer>();
+		preOrder(root, res);
+		return res;
+	}
+
+	private void preOrder(TreeNode p, ArrayList<Integer> res) {
+		if (p == null)
+			return;
+		preOrder(p.left, res);
+		res.add(p.val);
+		preOrder(p.right, res);
+	}
+
+	// 循环实现
+	public List<Integer> inorder_Traversal(TreeNode root) {
+		List<Integer> res = new ArrayList<Integer>();
+		if (root == null)
+			return res;
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode temp = root;
+		while (temp != null || !stack.isEmpty()) {
+			while (temp != null) {
+				stack.add(temp);
+				temp = temp.left;
+			}
+			temp = stack.pop();
+			res.add(temp.val);
+			temp = temp.right;
+		}
+		return res;
+	}
 }

@@ -27,18 +27,18 @@ public class UniqueBinarySearchTrees2 {
 	 */
 	private List<TreeNode> generateTrees(int begin, int end) {
 		List<TreeNode> res = new ArrayList<TreeNode>();
-		if(begin>end){
-			//表示结点为空，List中存储null
+		if (begin > end) {
+			// 表示结点为空，List中存储null
 			res.add(null);
 			return res;
 		}
-		for(int i = begin;i<= end;i++){
-			//转化为子问题求解，递归调用，获得左右子树的集合，从UniqueBST1中获得灵感。
-			List<TreeNode> left = generateTrees(begin,i-1);
-			List<TreeNode> right = generateTrees(i+1,end);
-			//交叉组合左右子树
-			for(TreeNode l:left)
-				for(TreeNode r:right){
+		for (int i = begin; i <= end; i++) {
+			// 转化为子问题求解，递归调用，获得左右子树的集合，从UniqueBST1中获得灵感。
+			List<TreeNode> left = generateTrees(begin, i - 1);
+			List<TreeNode> right = generateTrees(i + 1, end);
+			// 交叉组合左右子树
+			for (TreeNode l : left)
+				for (TreeNode r : right) {
 					TreeNode root = new TreeNode(i);
 					root.left = l;
 					root.right = r;
