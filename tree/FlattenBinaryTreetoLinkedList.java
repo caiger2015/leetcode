@@ -36,7 +36,7 @@ public class FlattenBinaryTreetoLinkedList {
 	/*
 	 * 先存储，后改变！
 	 * flatten之后的顺序是先序遍历的顺序，但是在递归的同时会改变树的结构，所以要处理右结点的位置，
-	 * 先序遍历时，右结点在左子树最右边的那个节点的下一个
+	 * 先序遍历时，右结点放到在左子树最右边的那个节点的右结点
 	 */
 	public static void flattenTreeToLinkedList(TreeNode root){
 		if(root == null)

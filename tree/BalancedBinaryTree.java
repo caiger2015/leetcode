@@ -1,5 +1,8 @@
 package leetcode.tree;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /*
  * Given a binary tree, determine if it is height-balanced.
  * For this problem, a height-balanced binary tree is defined as a binary tree 
@@ -10,7 +13,6 @@ public class BalancedBinaryTree {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 	}
 
 	public boolean isBalanced(TreeNode root) {

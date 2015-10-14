@@ -66,7 +66,7 @@ public class PartitionList {
 		return head;
 	}
 
-	// 利用递归，每次找到下一<x的结点，将>=x的结点接在尾部，最后尾结点指空
+	// 利用递归，每次找到下一个<x的结点，将>=x的结点接在尾部，最后尾结点指空
 	public static ListNode partition(ListNode head, int x) {
 		if (head == null || head.next == null)
 			return head;

@@ -4,8 +4,9 @@
 package leetcode.tree;
 
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * @author caiger
@@ -31,7 +32,8 @@ public class InorderTraversal {
 		List<Integer> res = new ArrayList<Integer>();
 		if (root == null)
 			return res;
-		Stack<TreeNode> stack = new Stack<TreeNode>();
+//		Stack<TreeNode> stack = new Stack<TreeNode>();
+		Deque<TreeNode> stack = new LinkedList<TreeNode>();
 		TreeNode temp = root;
 		while (temp != null || !stack.isEmpty()) {
 			while (temp != null) {

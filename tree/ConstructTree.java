@@ -34,7 +34,7 @@ public class ConstructTree {
 		System.out.println(new LevelorderTraversal()
 				.levelorderTraversal(constructTree("1#23#45")));
 	}
-
+	//二叉树层遍历的逆过程，用"#"代替空的结点把二叉树看成一棵满二叉树。
 	public static TreeNode constructTree(String s) {
 		if (s == null)
 			return null;

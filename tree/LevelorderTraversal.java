@@ -17,7 +17,7 @@ public class LevelorderTraversal {
 			return res;
 		// List<Integer> nextList = new ArrayList<Integer>();
 		Queue<TreeNode> que = new ArrayDeque<TreeNode>();
-		int pre = 1, now = 0;
+		int pre = 1, cur = 0;
 		que.add(root);
 		while (!que.isEmpty()) {
 			// 地方变量应当在循环内定义，每次都建立新实例
@@ -29,20 +29,20 @@ public class LevelorderTraversal {
 				nextList.add(temp.val);
 				if (temp.left != null) {
 					que.add(temp.left);
-					now++;
+					cur++;
 				}
 				if (temp.right != null) {
 					que.add(temp.right);
-					now++;
+					cur++;
 				}
 			}
-			pre = now;
-			now = 0;
+			pre = cur;
+			cur = 0;
 			res.add(nextList);
 		}
 		return res;
 	}
-
+	//从底部输出每一行，用stack存储先进后出
 	public List<List<Integer>> levelOrderBottom(TreeNode root) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		if (root == null)
