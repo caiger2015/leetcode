@@ -18,7 +18,7 @@ public class LinkedListCycle2 {
 	/**
 	 * 最开始的思路：利用快慢指针找出相遇的节点，在相遇节点处把链表分成有两个头的点一个为节点的两路链表，求其相遇节点
 	 * 重新分析快慢指针的过程，a为head到入口节点，b为入口下一个到相遇节点，c为相遇下一个到入口在环中的上一个 q = 2s,q =
-	 * a+b+c+b,s = a+b,所以c=a；说明在相遇的时候，相遇节点到环入口节点的距离等于head到入口的距离
+	 * a+b+n(c+b),a=(n-1)(b+c)+c,
 	 * 
 	 * @param head
 	 * @return
@@ -26,27 +26,26 @@ public class LinkedListCycle2 {
 	public ListNode detectCycle(ListNode head) {
 		if (head == null || head.next == null)
 			return null;
+		//快慢指针找中间节点，起始位置都为head可以处理结点数<=2的边界情况
 		ListNode slow = head;
-		ListNode quick = head.next.next;
-		// int s=1;
-		// int q=3;
-		while (quick != null) {
+		// ListNode quick = head.next.next;
+		// while (quick != null) {
+		ListNode quick = head;
+		while (quick == head || quick != null) {
 			if (quick == slow)
 				break;
 			slow = slow.next;
-			// s++;
 			if (quick.next == null)
 				return null;
 			quick = quick.next.next;
-			// q+=2;
 		}
 		if (quick == null)
 			return null;
 		// 长度c不包含相遇节点和入口节点，长度a包含入口节点
-		slow = slow.next.next;
-		while (head != slow) {
+		quick = quick.next.next;//找第一个结点
+		while (head != quick) {
 			head = head.next;
-			slow = slow.next;
+			quick = quick.next;
 		}
 		return head;
 		// 在相遇节点处把问题转化为寻找两个头节点的相遇节点问题

@@ -42,10 +42,11 @@ public class ImplementstrStr {
 	 */
 	private static int[] getNext(String n) {
 		int[] next = new int[n.length()];
-		next[0] = 0;
+		//-1表示与子串的第一个不匹配，主串后移一位
+		next[0] = -1;
 		int j = 0, k = -1;
 		while (j < n.length() - 1) {
-			if (n.charAt(j) == n.charAt(k)) {
+			if (k == -1 || n.charAt(j) == n.charAt(k)) {
 				j++;
 				k++;
 				next[j] = k;
@@ -56,15 +57,15 @@ public class ImplementstrStr {
 		// 结合主串和子串匹配过程的改进方法:
 		// s[i] != n[j]时需要寻找下一个n中比较的位置，若n[j] == n[k],则s[i] !=
 		// n[k],只需要比较s[i]和n[next[k]]
-		// if(n.charAt(j) == n.charAt(k)){
-		// j++;
-		// k++;
-		// if(n.charAt(j) == n.charAt(k))
-		// next[j] = next[k];
-		// else {
-		// next[j] = k;
-		// }
-		// }
+//		if (k==-1 || n.charAt(j) == n.charAt(k)) {
+//			j++;
+//			k++;
+//			if (n.charAt(j) == n.charAt(k))
+//				next[j] = next[k];
+//			else {
+//				next[j] = k;
+//			}
+//		}
 		return next;
 	}
 }
