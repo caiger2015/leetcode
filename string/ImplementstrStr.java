@@ -29,7 +29,7 @@ public class ImplementstrStr {
 			}
 		}
 		if (j == n.length())
-			return i = j;
+			return i - j;
 		return -1;
 	}
 
