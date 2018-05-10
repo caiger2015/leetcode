@@ -51,7 +51,7 @@ public class ImplementstrStr {
 				k++;
 				next[j] = k;
 			} else {
-				j = next[j];
+				k = next[k];
 			}
 		}
 		// 结合主串和子串匹配过程的改进方法:
