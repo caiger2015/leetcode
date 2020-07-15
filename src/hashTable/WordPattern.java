@@ -30,21 +30,21 @@ public class WordPattern {
 				word.append(s.charAt(j++));
 			}
 			if (!map.containsKey(a)) {
-				//¶ÔÓ¦¹ØÏµÒªÇóÒ»¶ÔÒ»£¬·´¹ıÀ´Ã»ÓĞkeyÊÇ²»ÄÜÓĞvalue
+				//å¯¹åº”å…³ç³»è¦æ±‚ä¸€å¯¹ä¸€ï¼Œåè¿‡æ¥æ²¡æœ‰keyæ˜¯ä¸èƒ½æœ‰value
 				if (map.containsValue(word.toString())) {
 					return false;
 				} else {
 					map.put(a, word.toString());
 				}
 			} else {
-				//±È½Ï×Ö·û´®ÊÇ·ñÏàµÈÓÃStringµÄequals·½·¨£¬StringBufferµÄequals·½·¨ÊÇ¼Ì³Ğ×ÔobjectµÄ·½·¨£¬µÈ¼ÛÓÚ¡°==¡±
+				//æ¯”è¾ƒå­—ç¬¦ä¸²æ˜¯å¦ç›¸ç­‰ç”¨Stringçš„equalsæ–¹æ³•ï¼ŒStringBufferçš„equalsæ–¹æ³•æ˜¯ç»§æ‰¿è‡ªobjectçš„æ–¹æ³•ï¼Œç­‰ä»·äºâ€œ==â€
 				if (!map.get(a).equals(word.toString())) {
 					return false;
 				}
 			}
 			i++;j++;
 		}
-		//sµÄ×îºóÒ»¸ö²»ÊÇ¿Õ¸ñ£¬ËùÒÔÌø³öÑ­»·Ê±j=m+1£¬i=n
+		//sçš„æœ€åä¸€ä¸ªä¸æ˜¯ç©ºæ ¼ï¼Œæ‰€ä»¥è·³å‡ºå¾ªç¯æ—¶j=m+1ï¼Œi=n
 		return i == n && j == m+1 ? true : false;
 	}
 }

@@ -20,13 +20,13 @@ public class BinaryTreeRightSideView {
 		System.out.print(rightSideView(p).toString());
 	}
 
-	// ¹ã¶ÈÓÅÏÈ²ã±éÀú£¬ÕÒ³öÃ¿Ò»²ãµÄ×îÓÒ±ßµÄÄÇ¸öÔªËØ
+	// å¹¿åº¦ä¼˜å…ˆå±‚éå†ï¼Œæ‰¾å‡ºæ¯ä¸€å±‚çš„æœ€å³è¾¹çš„é‚£ä¸ªå…ƒç´ 
 	public static List<Integer> rightSideView(TreeNode root) {
 		List<Integer> res = new ArrayList<Integer>();
 		if (root == null)
 			return res;
 		Deque<TreeNode> que = new LinkedList<TreeNode>();
-		// cur±íÊ¾µ±Ç°²ãµÄ½ÚµãÊı£¬next±íÊ¾ÏÂÒ»²ãµÄ½ÚµãÊı
+		// curè¡¨ç¤ºå½“å‰å±‚çš„èŠ‚ç‚¹æ•°ï¼Œnextè¡¨ç¤ºä¸‹ä¸€å±‚çš„èŠ‚ç‚¹æ•°
 		int cur = 1, next = 0;
 		que.add(root);
 		TreeNode temp;
@@ -49,7 +49,7 @@ public class BinaryTreeRightSideView {
 		return res;
 	}
 
-	// Éî¶ÈÓÅÏÈËã·¨ÈçºÎÄÜ¹»¼ÇÂ¼µ±Ç°µÄÉî¶ÈÄØ£¿´ı½â¾öµÄÎÊÌâ£¡£¡£¡
+	// æ·±åº¦ä¼˜å…ˆç®—æ³•å¦‚ä½•èƒ½å¤Ÿè®°å½•å½“å‰çš„æ·±åº¦å‘¢ï¼Ÿå¾…è§£å†³çš„é—®é¢˜ï¼ï¼ï¼
 	public static List<Integer> rightSideView1(TreeNode root) {
 		List<Integer> res = new ArrayList<Integer>();
 		if (root == null)

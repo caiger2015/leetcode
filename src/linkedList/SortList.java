@@ -14,7 +14,7 @@ public class SortList {
 		ListNode l = new ListNode("14734296");
 		System.out.print(sortList(l));
 	}
-	//¹é²¢µÄ·½Ê½£¬ÕÒÖĞ¼ä½ÚµãºÏ²¢Á½¸ö²¿·Ö
+	//å½’å¹¶çš„æ–¹å¼ï¼Œæ‰¾ä¸­é—´èŠ‚ç‚¹åˆå¹¶ä¸¤ä¸ªéƒ¨åˆ†
 	public static ListNode sortList(ListNode head) {
 		if(head == null || head.next==null){
 			return head;
@@ -22,7 +22,7 @@ public class SortList {
 		ListNode slow = head;
 		ListNode quick = head;
 		ListNode last = head;
-		//¿ìÂıÖ¸ÕëÕÒÖĞ¼ä½Úµã£¬ÆğÊ¼Î»ÖÃ¶¼Îªhead¿ÉÒÔ´¦Àí½áµãÊı<=2µÄ±ß½çÇé¿ö
+		//å¿«æ…¢æŒ‡é’ˆæ‰¾ä¸­é—´èŠ‚ç‚¹ï¼Œèµ·å§‹ä½ç½®éƒ½ä¸ºheadå¯ä»¥å¤„ç†ç»“ç‚¹æ•°<=2çš„è¾¹ç•Œæƒ…å†µ
 		while(quick==head||quick != null){
 			last = slow;
 			slow = slow.next;
@@ -73,7 +73,7 @@ public class SortList {
 		}
 		return head.next;
 	}
-	//¿ìÅÅµÄ·½Ê½£¬time limit exceeded
+	//å¿«æ’çš„æ–¹å¼ï¼Œtime limit exceeded
 	public static ListNode sortList1(ListNode head) {
 		if(head == null || head.next == null){
 			return head;

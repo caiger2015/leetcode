@@ -19,18 +19,18 @@ class Solution3 {
 		StringBuffer result = new StringBuffer(len3 + 1);
 		Character temp = '0';
 		int j = 1;
-		for (; j <= (len1 > len2 ? len2 : len1); j++)// ?:ÈıÄ¿ÔËËã·û
+		for (; j <= (len1 > len2 ? len2 : len1); j++)// ?:ä¸‰ç›®è¿ç®—ç¬¦
 		{
 			Character aa = a.charAt(len1 - j);
 			Character bb = b.charAt(len2 - j);
-			switch (aa + bb + temp)// CharacterÀàĞÍ + - > < +
-									// ÔËËã£¬×ª»»³ÉintÀàĞÍµÄasscÂë£¬0¶ÔÓ¦48£¬
+			switch (aa + bb + temp)// Characterç±»å‹ + - > < +
+									// è¿ç®—ï¼Œè½¬æ¢æˆintç±»å‹çš„asscç ï¼Œ0å¯¹åº”48ï¼Œ
 			{
 			case 147:
-				// str = '1'+strµÄĞÎÊ½¿ÉÒÔÔÚÇ°±ßÌí¼Ó£¬²»ÓÃ·­×ª
+				// str = '1'+strçš„å½¢å¼å¯ä»¥åœ¨å‰è¾¹æ·»åŠ ï¼Œä¸ç”¨ç¿»è½¬
 				result.append('1');
 				temp = '1';
-				continue;// continue µ½´ï×îÄÚµÄfor£¬breakÌø³öswitch¼ÌĞøÖ´ĞĞ
+				continue;// continue åˆ°è¾¾æœ€å†…çš„forï¼Œbreakè·³å‡ºswitchç»§ç»­æ‰§è¡Œ
 			case 146:
 				result.append('0');
 				temp = '1';
@@ -50,7 +50,7 @@ class Solution3 {
 			case 96:
 				result.append('0');
 				temp = '0';
-				break;// Ê¹ÓÃwhileÊ±£¬±ØĞë¶ÔÃ¿Ò»¸öcaseÉèÓĞbreak»òÕßcontinue£¡£¡
+				break;// ä½¿ç”¨whileæ—¶ï¼Œå¿…é¡»å¯¹æ¯ä¸€ä¸ªcaseè®¾æœ‰breakæˆ–è€…continueï¼ï¼
 			case 97:
 				result.append('1');
 				temp = '0';
@@ -83,8 +83,8 @@ class Solution3 {
 		if (temp == '1')
 			result.append('1');
 		return result.reverse().toString();
-		// StringBuffer.reverse()·­×ª×Ö·û´®£¬¶Ô¿Õ×ÅµÄ²¿·Ö²»¿¼ÂÇ£¬
-		// ÀıÈç´óĞ¡Îª3µÄStringBuffer,´æÈë¡®1¡¯£¬·­×ªºó»¹ÊÇ¡®1¡¯
+		// StringBuffer.reverse()ç¿»è½¬å­—ç¬¦ä¸²ï¼Œå¯¹ç©ºç€çš„éƒ¨åˆ†ä¸è€ƒè™‘ï¼Œ
+		// ä¾‹å¦‚å¤§å°ä¸º3çš„StringBuffer,å­˜å…¥â€˜1â€™ï¼Œç¿»è½¬åè¿˜æ˜¯â€˜1â€™
 	}
 
 }

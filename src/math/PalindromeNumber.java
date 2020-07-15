@@ -16,19 +16,19 @@ class Solution2 {
 		if (x == Integer.MIN_VALUE)
 			return false;
 		int res = Math.abs(x);
-		int temp = 1;// Î»Êı
+		int temp = 1;// ä½æ•°
 		int left = 0;
 		int right = 0;
-		while (res / temp >= 10)// ÒªÍÆÇÃÖÕÖ¹Ìõ¼şµÄÈ¡Öµ£¡£¡£¡
+		while (res / temp >= 10)// è¦æ¨æ•²ç»ˆæ­¢æ¡ä»¶çš„å–å€¼ï¼ï¼ï¼
 		{
 			temp *= 10;
 		}
 
-		while (res != 0 && temp > 1)// ÖÕÖ¹Ìõ¼şµÄÑ¡Ôñ¾¡Á¿¼òµ¥£¬Ñ¡ÔñwhileÍâ²¿¶¨ÒåµÄ±äÁ¿
+		while (res != 0 && temp > 1)// ç»ˆæ­¢æ¡ä»¶çš„é€‰æ‹©å°½é‡ç®€å•ï¼Œé€‰æ‹©whileå¤–éƒ¨å®šä¹‰çš„å˜é‡
 		{
 			left = res / temp;
 			right = res % 10;
-			// ÓÃifÅĞ¶ÏÀ´ÊµÏÖÌø³ö
+			// ç”¨ifåˆ¤æ–­æ¥å®ç°è·³å‡º
 			if (left != right)
 				return false;
 			res = (res - right - left * temp) / 10;

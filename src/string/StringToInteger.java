@@ -14,23 +14,23 @@ public class StringToInteger {
 	public static int stoi(String s) {
 		if (s == null)
 			return 0;
-		// È¥¿Õ¸ñ,trim·µ»ØµÄÊÇÒ»¸öĞÂµÄ×Ö·û´®
+		// å»ç©ºæ ¼,trimè¿”å›çš„æ˜¯ä¸€ä¸ªæ–°çš„å­—ç¬¦ä¸²
 		s = s.trim();
 		if (s.length() == 0)
 			return 0;
 		int i = 0, res = 0;
 		boolean isNeg = false;
-		// ´¦Àí¿ªÍ·µÄ+-ºÅ
+		// å¤„ç†å¼€å¤´çš„+-å·
 		if (s.charAt(i) == '+')
 			i++;
 		else if (s.charAt(i) == '-') {
 			isNeg = true;
 			i++;
 		}
-		// ÅĞ¶ÏÃ¿Ò»Î»ÊÇ·ñÊÇÊı×Ö
+		// åˆ¤æ–­æ¯ä¸€ä½æ˜¯å¦æ˜¯æ•°å­—
 		while (i < s.length() && s.charAt(i) >= '0' && s.charAt(i) <= '9') {
 			int digit = s.charAt(i) - '0';
-			// Î´¼ÆËãresÖ®Ç°Ïß±È½ÏÊÇ·ñÔ½½ç
+			// æœªè®¡ç®—resä¹‹å‰çº¿æ¯”è¾ƒæ˜¯å¦è¶Šç•Œ
 			if (isNeg && -res < (Integer.MIN_VALUE + digit) / 10)
 				return Integer.MIN_VALUE;
 			if (!isNeg && res > (Integer.MAX_VALUE - digit) / 10)
@@ -44,12 +44,12 @@ public class StringToInteger {
 	public int myAtoi(String s) {
 		if (s == null)
 			return 0;
-		// È¥¿Õ¸ñ
+		// å»ç©ºæ ¼
 		s = s.trim();
 		if (s.length() == 0)
 			return 0;
 		int i = 0, flag = 1, res = 0;
-		// ÅĞ¶Ï¿ªÍ·µÄ·ûºÅ
+		// åˆ¤æ–­å¼€å¤´çš„ç¬¦å·
 		if (s.charAt(i) == '+') {
 			flag = 1;
 			i++;
@@ -57,13 +57,13 @@ public class StringToInteger {
 			i++;
 			flag = -1;
 		}
-		// Ã»µ½Í·ºÍÊÇÊı×ÖµÄÇé¿ö¼ÆËãres
+		// æ²¡åˆ°å¤´å’Œæ˜¯æ•°å­—çš„æƒ…å†µè®¡ç®—res
 		while (i < s.length() && s.charAt(i) >= '0' && s.charAt(i) <= '9') {
-			// ÕâÒ»Î»Êı×ÖÖµÎªÕı
+			// è¿™ä¸€ä½æ•°å­—å€¼ä¸ºæ­£
 			int digit = s.charAt(i) - '0';
-			// ´¦ÀíÔ½½çµÄÇé¿ö£¬Èç¹ûÏÈ¼ÆËãresÔòÓĞ¿ÉÄÜ¼ÆËãÔ½½ç(ÌØÊâÇé¿ö£ºInteger.MAX_VALUE+1 =
+			// å¤„ç†è¶Šç•Œçš„æƒ…å†µï¼Œå¦‚æœå…ˆè®¡ç®—resåˆ™æœ‰å¯èƒ½è®¡ç®—è¶Šç•Œ(ç‰¹æ®Šæƒ…å†µï¼šInteger.MAX_VALUE+1 =
 			// Integer.MIN_VALUE)
-			// Ó¦¸ÃÔÚÉÙÒ»Î»µÄÇé¿öÏÂ±ä»»²»µÈÊ½±È½Ï
+			// åº”è¯¥åœ¨å°‘ä¸€ä½çš„æƒ…å†µä¸‹å˜æ¢ä¸ç­‰å¼æ¯”è¾ƒ
 			if (flag == -1 && res < (Integer.MIN_VALUE + digit) / 10)
 				return Integer.MIN_VALUE;
 			if (flag == 1 && res > (Integer.MAX_VALUE - digit) / 10)

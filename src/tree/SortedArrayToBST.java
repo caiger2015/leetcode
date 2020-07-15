@@ -20,12 +20,12 @@ public class SortedArrayToBST {
 	}
 
 	/**
-	 * description£º´Óbeginµ½endµÄÅÅĞòµÄÊı×éÖĞÕÒµ½×îÖĞ¼äµÄ½Úµã×÷ÎªÒ»¸ö×ó/ÓÒº¢×Ó¡£
+	 * descriptionï¼šä»beginåˆ°endçš„æ’åºçš„æ•°ç»„ä¸­æ‰¾åˆ°æœ€ä¸­é—´çš„èŠ‚ç‚¹ä½œä¸ºä¸€ä¸ªå·¦/å³å­©å­ã€‚
 	 * 
-	 * @param numsÒª×ª»»µÄÊı×é
-	 * @param begin½áÊøÑ°ÕÒµÄË÷Òı
-	 * @param end¿ªÊ¼Ñ°ÕÒµÄË÷Òı
-	 * @return ·µ»Ø´ÓÊı×éÖĞÕÒµ½µÄ½áµã
+	 * @param nums è¦è½¬æ¢çš„æ•°ç»„
+	 * @param begin ç»“æŸå¯»æ‰¾çš„ç´¢å¼•
+	 * @param end å¼€å§‹å¯»æ‰¾çš„ç´¢å¼•
+	 * @return è¿”å›ä»æ•°ç»„ä¸­æ‰¾åˆ°çš„ç»“ç‚¹
 	 */
 	private static TreeNode sortedArrayToBST(int[] nums, int begin, int end) {
 		if (begin <= end) {

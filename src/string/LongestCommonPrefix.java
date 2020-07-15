@@ -20,11 +20,11 @@ public class LongestCommonPrefix {
 		StringBuilder res = new StringBuilder();
 		// res.append(strs[0].charAt(0));
 		for (int j = 0; j < n; j++) {
-			// ·ÅÔÚÕâÀï¸üÐÂres£¬Ã¿´ÎÅÐ¶¨resÊÇ·ñ×î³¤Ö®Ç°£¬µÈÐ§ÓÚÔÚÅÐ¶¨³É¹¦Ò»Î»Ö®ºó£¬ÇÐ°üº¬ÁËj<nµÄÅÐ¶¨
+			// æ”¾åœ¨è¿™é‡Œæ›´æ–°resï¼Œæ¯æ¬¡åˆ¤å®šresæ˜¯å¦æœ€é•¿ä¹‹å‰ï¼Œç­‰æ•ˆäºŽåœ¨åˆ¤å®šæˆåŠŸä¸€ä½ä¹‹åŽï¼Œåˆ‡åŒ…å«äº†j<nçš„åˆ¤å®š
 			res.append(strs[0].charAt(j));
 			for (int k = 0; k < strs.length; k++) {
 				if (res.charAt(j) != strs[k].charAt(j)) {
-					// É¾³ý×îºóÒ»Î»£¬·µ»ØresÖÐ¹²Í¬µÄprefix
+					// åˆ é™¤æœ€åŽä¸€ä½ï¼Œè¿”å›žresä¸­å…±åŒçš„prefix
 					return res.deleteCharAt(j).toString();
 				}
 			}

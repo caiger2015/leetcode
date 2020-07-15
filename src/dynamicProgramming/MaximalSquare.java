@@ -6,17 +6,17 @@ public class MaximalSquare {
 		// TODO Auto-generated method stub
 		System.out.print(maximalSquare(new char[][]{{'1','1'},{'1','1'}}));
 	}
-	//¶¯Ì¬¹æ»®ÎÊÌâÏëµİÍÆ¹«Ê½Çó½â£¬Öğ²½¹¹Ôì½á¹û¾ØÕó£¬ÀûÓÃÖ®Ç°µÃµ½µÄ¾ØÕóÔªËØµİÍÆºó±ßµÄÔªËØ¡£
+	//åŠ¨æ€è§„åˆ’é—®é¢˜æƒ³é€’æ¨å…¬å¼æ±‚è§£ï¼Œé€æ­¥æ„é€ ç»“æœçŸ©é˜µï¼Œåˆ©ç”¨ä¹‹å‰å¾—åˆ°çš„çŸ©é˜µå…ƒç´ é€’æ¨åè¾¹çš„å…ƒç´ ã€‚
 	public static int maximalSquare(char[][] matrix) {
 		 if(matrix == null||matrix.length == 0||matrix[0].length == 0)
 			 return 0;
 		 int n = matrix.length;
 		 int m = matrix[0].length;
-		 //½á¹û¾ØÕó£¬ÆäÖĞµÄ£¨i£¬j£©ÔªËØ±íÊ¾ÒÔËüÎª×îÓÒÏÂ½ÇµÄÕı·½ĞÎµÄ±ß³¤
+		 //ç»“æœçŸ©é˜µï¼Œå…¶ä¸­çš„ï¼ˆiï¼Œjï¼‰å…ƒç´ è¡¨ç¤ºä»¥å®ƒä¸ºæœ€å³ä¸‹è§’çš„æ­£æ–¹å½¢çš„è¾¹é•¿
 		 int[][] size = new int[n][m];
 		 int max = 0;
 		 for(int i = 0;i<n;i++){
-			 //matrixÖĞµÄÔªËØÊÇchar£¬»áÒşÊ½×ª»»³ÉascÂëÊıÖµºÍÊıÖµÀàĞÍ±È½Ï±àÒëÒ²¿ÉÒÔÍ¨¹ı
+			 //matrixä¸­çš„å…ƒç´ æ˜¯charï¼Œä¼šéšå¼è½¬æ¢æˆascç æ•°å€¼å’Œæ•°å€¼ç±»å‹æ¯”è¾ƒç¼–è¯‘ä¹Ÿå¯ä»¥é€šè¿‡
 			 if(matrix[i][0] == '1')
 				 max = 1;
 				 size[i][0] = matrix[i][0]-'0';
@@ -31,7 +31,7 @@ public class MaximalSquare {
 				 if(matrix[i][j] == '0')
 					 size[i][j] = 0;
 				 else{
-					 //µİÍÆ¹ØÏµ£ºf(i,j) = min(f(i-1,j),f(i,j-1),f(i-1,j-1))+1
+					 //é€’æ¨å…³ç³»ï¼šf(i,j) = min(f(i-1,j),f(i,j-1),f(i-1,j-1))+1
 					 size[i][j] = Math.min(Math.min(size[i-1][j],size[i][j-1]),size[i-1][j-1])+1;
 					 max = Math.max(max, size[i][j]);
 				 }

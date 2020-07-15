@@ -9,15 +9,15 @@ public class CountPrimes {
 	}
 
 	/*
-	 * Sieve of Eratosthenes:1.¹¹½¨Ò»¸ö´Ó2¿ªÊ¼µ½n-1µÄÊý×é£»2.Áîp =
-	 * 2£»3.´Óp¿ªÊ¼£¬Ã¿´Î±ê¼ÇÒÔpÎª¼ä¸ôÖ±µ½nµÄËùÓÐÊý£¬p²»±ê¼Ç£¬ 4.ÁîpµÈÓÚÏÂÒ»¸öÃ»ÓÐ±ê¼ÇµÄÊý£¬ÖØ¸´²½Öè3£¬Ö±µ½p*p>n
-	 * Tips:ËùÓÐµÄÅ¼Êý¶¼¿ÉÒÔÖ±½ÓÅÅ³ý£»p*Òò×Ó£¬Ã¿´ÎÒò×Ó´Óp¿ªÊ¼++£»µ±p*p>nÊ±£¬ËùÓÐµÄÊý¶¼¾­¹ýÁËÅÐ¶Ï£¬Ê£ÏÂµÄÃ»±ê¼ÇµÄÊý¾ÍÊÇÐ¡ÓÚnµÄËùÓÐËØÊý
-	 * Õâ¸ö·½·¨¿ÉÒÔÓÃÀ´ÅÐ¶ÏÒ»¸öÊýÊÇ²»ÊÇËØÊý£ºÏÈÅÐ¶ÏÆæÅ¼£¬È»ºóÅÐ¶Ï´Ó3µ½(int)Math.sqrt(n)µÄËùÓÐÆæÊýÊÇ·ñÊÇnµÄÒò×Ó
+	 * Sieve of Eratosthenes:1.æž„å»ºä¸€ä¸ªä»Ž2å¼€å§‹åˆ°n-1çš„æ•°ç»„ï¼›2.ä»¤p =
+	 * 2ï¼›3.ä»Žpå¼€å§‹ï¼Œæ¯æ¬¡æ ‡è®°ä»¥pä¸ºé—´éš”ç›´åˆ°nçš„æ‰€æœ‰æ•°ï¼Œpä¸æ ‡è®°ï¼Œ 4.ä»¤pç­‰äºŽä¸‹ä¸€ä¸ªæ²¡æœ‰æ ‡è®°çš„æ•°ï¼Œé‡å¤æ­¥éª¤3ï¼Œç›´åˆ°p*p>n
+	 * Tips:æ‰€æœ‰çš„å¶æ•°éƒ½å¯ä»¥ç›´æŽ¥æŽ’é™¤ï¼›p*å› å­ï¼Œæ¯æ¬¡å› å­ä»Žpå¼€å§‹++ï¼›å½“p*p>næ—¶ï¼Œæ‰€æœ‰çš„æ•°éƒ½ç»è¿‡äº†åˆ¤æ–­ï¼Œå‰©ä¸‹çš„æ²¡æ ‡è®°çš„æ•°å°±æ˜¯å°äºŽnçš„æ‰€æœ‰ç´ æ•°
+	 * è¿™ä¸ªæ–¹æ³•å¯ä»¥ç”¨æ¥åˆ¤æ–­ä¸€ä¸ªæ•°æ˜¯ä¸æ˜¯ç´ æ•°ï¼šå…ˆåˆ¤æ–­å¥‡å¶ï¼Œç„¶åŽåˆ¤æ–­ä»Ž3åˆ°(int)Math.sqrt(n)çš„æ‰€æœ‰å¥‡æ•°æ˜¯å¦æ˜¯nçš„å› å­
 	 */
 	public static int countPrimes(int n) {
 		if (n <= 1)
 			return 0;
-		int res = 0;// 1²»ÊÇprime£¬´Ó2¿ªÊ¼ÅÐ¶Ï
+		int res = 0;// 1ä¸æ˜¯primeï¼Œä»Ž2å¼€å§‹åˆ¤æ–­
 		int[] nums = new int[n];
 		for (int i = 0; i < n; i++) {
 			nums[i] = i;

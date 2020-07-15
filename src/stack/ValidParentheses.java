@@ -28,10 +28,11 @@ public class ValidParentheses {
 		int j = 0;
 		while (j < s.length()) {
 			if (stack.isEmpty() || s.charAt(j) == '(' || s.charAt(j) == '['
-					|| s.charAt(j) == '{')
+					|| s.charAt(j) == '{') {
 				stack.push(s.charAt(j++));
-			else if (!isMatch(stack.pop(), s.charAt(j++)))
+			} else if (!isMatch(stack.pop(), s.charAt(j++))) {
 				return false;
+			}
 		}
 		return stack.isEmpty();
 	}

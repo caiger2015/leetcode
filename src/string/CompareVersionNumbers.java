@@ -19,14 +19,14 @@ public class CompareVersionNumbers {
 	}
 
 	/**
-	 * description���á�."���ָ����Ӱ汾��ͬ���İ汾��֮��Ƚϴ�С����ͬ������Ƚ���һ����
-	 * ע�⴦���ð汾���еġ�0������ͷ����β��������ȫ0�汾��01.01.000.00 == 1.1��
+	 * description：用“."来分隔父子版本，同级的版本号之间比较大小，相同则继续比较下一级；
+	 * 注意处理好版本号中的“0”，开头，结尾，单独的全0版本（01.01.000.00 == 1.1）
 	 * 
 	 * @param v1
-	 *            Ҫ�Ƚϵ��ַ���
+	 *            要比较的字符串
 	 * @param v2
-	 *            Ҫ�Ƚϵ��ַ���
-	 * @return v1>v2 ����1��v1<v2����-1�����򷵻�0
+	 *            要比较的字符串
+	 * @return v1>v2 返回1，v1<v2返回-1，否则返回0
 	 */
 	public static int compareVersion(String v1, String v2) {
 		if (v1 == null || v2 == null)
@@ -55,7 +55,7 @@ public class CompareVersionNumbers {
 			if (t1 > t2)
 				return 1;
 		}
-		// ѭ�������ֱ������������������δ��ͷ�Ĳ����Ƿ�汾ȫ��0
+		// 循环结束分别分析两个条件，处理未到头的部分是否版本全是0
 		while (i < n && (v1.charAt(i) == '0' || v1.charAt(i) == '.'))
 			i++;
 		while (j < m && (v2.charAt(j) == '0' || v2.charAt(j) == '.'))

@@ -8,7 +8,7 @@ public class MaximumProductSubarray {
 	}
 
 	/*
-	 * ¼ÇÂ¼Á½ÖÖ½á¹û£¬Õı¸ºÇé¿ö
+	 * è®°å½•ä¸¤ç§ç»“æœï¼Œæ­£è´Ÿæƒ…å†µ
 	 */
 	public static int maxProduct(int[] nums) {
 		if (nums == null || nums.length == 0)
@@ -18,7 +18,7 @@ public class MaximumProductSubarray {
 		int negative = nums[0];
 		for (int i = 1; i < nums.length; i++) {
 			int a = positive * nums[i];
-			int b = negative * nums[i];// Ö±½ÓÅĞ¶ÏÃ¿´ÎÀÛ³ËµÄ½á¹û
+			int b = negative * nums[i];// ç›´æ¥åˆ¤æ–­æ¯æ¬¡ç´¯ä¹˜çš„ç»“æœ
 			positive = Math.max(Math.max(a, b), nums[i]);
 			negative = Math.min(Math.min(a, b), nums[i]);
 			maxProduct = Math.max(maxProduct, positive);

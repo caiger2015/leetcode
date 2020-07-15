@@ -19,9 +19,9 @@ public class SummaryRanges {
 		if (nums == null || nums.length == 0)
 			return res;
 		int i = 0;
-		// Tips£ºÑ­»·Òª¿¼ÂÇÒ»°ãÇé¿ö£¬²»ÄÜÖ»¿¼ÂÇ³õÊ¼Çé¿ö£¡
-		// Íâ²ãÑ­»·¿ØÖÆÃ¿´Î´æ´¢½á¹û
-		// ÄÚ²ãÑ­»·¹¹ÔìÃ¿´Î½á¹û
+		// Tipsï¼šå¾ªç¯è¦è€ƒè™‘ä¸€èˆ¬æƒ…å†µï¼Œä¸èƒ½åªè€ƒè™‘åˆå§‹æƒ…å†µï¼
+		// å¤–å±‚å¾ªç¯æ§åˆ¶æ¯æ¬¡å­˜å‚¨ç»“æœ
+		// å†…å±‚å¾ªç¯æ„é€ æ¯æ¬¡ç»“æœ
 		while (i < nums.length) {
 			StringBuilder s = new StringBuilder();
 			int start = nums[i++];

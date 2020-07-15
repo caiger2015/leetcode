@@ -18,25 +18,25 @@ public class UniqueBinarySearchTrees2 {
         return generateTrees(1,n);
     }
 	/**
-	 * ¶¯Ì¬¹æ»®£ºµÚi¸öÊıÎª¸ù½ÚµãÊ±£¬×ó×ÓÊ÷ÊÇÓÉ1~i-1µÄ½áµã×é³ÉµÄbst£¬ÓÒ×ÓÊ÷ÊÇÓÉi+1~nµÄ½áµã×é³ÉµÄbst
-	 * 			  ×óÓÒ×ÓÊ÷µÄ×éºÏ¼´ÎªiÎª¸ùÊ±bstµÄËùÓĞ¹¹³É¡£ÀûÓÃµİ¹éµÄ·½Ê½£¬Ã¿´Î·µ»ØÇóµÃµÄbstÍ·½áµã¡£
-	 * 			 ×îÖÕ½á¹ûÒª·µ»ØµÄÊÇList<TreeNode>,ËùÒÔÔÚ¶¯Ì¬¹æ»®¹ı³ÌÖĞ¾ÍÊÇÀûÓÃ×ÓÎÊÌâ·µ»ØµÄ½á¹ûÀ´µİÍÆ¸¸ÎÊÌâµÄ½á¹û¡£
+	 * åŠ¨æ€è§„åˆ’ï¼šç¬¬iä¸ªæ•°ä¸ºæ ¹èŠ‚ç‚¹æ—¶ï¼Œå·¦å­æ ‘æ˜¯ç”±1~i-1çš„ç»“ç‚¹ç»„æˆçš„bstï¼Œå³å­æ ‘æ˜¯ç”±i+1~nçš„ç»“ç‚¹ç»„æˆçš„bst
+	 * 			  å·¦å³å­æ ‘çš„ç»„åˆå³ä¸ºiä¸ºæ ¹æ—¶bstçš„æ‰€æœ‰æ„æˆã€‚åˆ©ç”¨é€’å½’çš„æ–¹å¼ï¼Œæ¯æ¬¡è¿”å›æ±‚å¾—çš„bstå¤´ç»“ç‚¹ã€‚
+	 * 			 æœ€ç»ˆç»“æœè¦è¿”å›çš„æ˜¯List<TreeNode>,æ‰€ä»¥åœ¨åŠ¨æ€è§„åˆ’è¿‡ç¨‹ä¸­å°±æ˜¯åˆ©ç”¨å­é—®é¢˜è¿”å›çš„ç»“æœæ¥é€’æ¨çˆ¶é—®é¢˜çš„ç»“æœã€‚
 	 * @param begin
 	 * @param end
-	 * @return ´Óbeginµ½endµÄËùÓĞ½Úµã×é³ÉµÄBST
+	 * @return ä»beginåˆ°endçš„æ‰€æœ‰èŠ‚ç‚¹ç»„æˆçš„BST
 	 */
 	private List<TreeNode> generateTrees(int begin, int end) {
 		List<TreeNode> res = new ArrayList<TreeNode>();
 		if (begin > end) {
-			// ±íÊ¾½áµãÎª¿Õ£¬ListÖĞ´æ´¢null
+			// è¡¨ç¤ºç»“ç‚¹ä¸ºç©ºï¼ŒListä¸­å­˜å‚¨null
 			res.add(null);
 			return res;
 		}
 		for (int i = begin; i <= end; i++) {
-			// ×ª»¯Îª×ÓÎÊÌâÇó½â£¬µİ¹éµ÷ÓÃ£¬»ñµÃ×óÓÒ×ÓÊ÷µÄ¼¯ºÏ£¬´ÓUniqueBST1ÖĞ»ñµÃÁé¸Ğ¡£
+			// è½¬åŒ–ä¸ºå­é—®é¢˜æ±‚è§£ï¼Œé€’å½’è°ƒç”¨ï¼Œè·å¾—å·¦å³å­æ ‘çš„é›†åˆï¼Œä»UniqueBST1ä¸­è·å¾—çµæ„Ÿã€‚
 			List<TreeNode> left = generateTrees(begin, i - 1);
 			List<TreeNode> right = generateTrees(i + 1, end);
-			// ½»²æ×éºÏ×óÓÒ×ÓÊ÷
+			// äº¤å‰ç»„åˆå·¦å³å­æ ‘
 			for (TreeNode l : left)
 				for (TreeNode r : right) {
 					TreeNode root = new TreeNode(i);

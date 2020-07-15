@@ -7,14 +7,14 @@ class MinStack {
 	Stack<Integer> minStack = new Stack<Integer>();
 
 	public void push(int x) {
-		if (minStack.empty() || minStack.peek() >= x)// È¡ = ÊÇÎªÁË·ÀÖ¹ÖØ¸´
+		if (minStack.empty() || minStack.peek() >= x)// å– = æ˜¯ä¸ºäº†é˜²æ­¢é‡å¤
 			minStack.push(x);
 		stack.push(x);
 	}
 
 	public void pop() {
-		// »òÕßÓÃif(stack.peek().equals(minStack.peek()))
-		// peek()·µ»ØµÄÊÇInteger¶ÔÏó£¬Ö±½Ó±È½ÏÊÇ±È½ÏÒıÓÃ
+		// æˆ–è€…ç”¨if(stack.peek().equals(minStack.peek()))
+		// peek()è¿”å›çš„æ˜¯Integerå¯¹è±¡ï¼Œç›´æ¥æ¯”è¾ƒæ˜¯æ¯”è¾ƒå¼•ç”¨
 		if (stack.peek().intValue() == minStack.peek().intValue())
 			minStack.pop();
 		stack.pop();
@@ -29,7 +29,7 @@ class MinStack {
 	}
 }
 /*
- * Ë¼Â·´íÎó class MinStack { private Node<Integer> top; public MinStack(){ this.top
+ * æ€è·¯é”™è¯¯ class MinStack { private Node<Integer> top; public MinStack(){ this.top
  * = null; } public void push(int x) { top = new Node<Integer>(new
  * Integer(x),top); }
  * 

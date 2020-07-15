@@ -20,7 +20,7 @@ public class PalindromeLinkedList {
 		if (head == null || head.next == null)
 			return true;
 		ListNode quick = head, slow = head;
-		// ÀûÓÃ¿ìÂıÖ¸Õë±éÀúÒ»±éÁ´±í£¬Ñ­»·ÖÕÖ¹Ê±slowÔÚºó°ë²¿·ÖÁ´±íµÄµÚÒ»¸ö¡£
+		// åˆ©ç”¨å¿«æ…¢æŒ‡é’ˆéå†ä¸€éé“¾è¡¨ï¼Œå¾ªç¯ç»ˆæ­¢æ—¶slowåœ¨ååŠéƒ¨åˆ†é“¾è¡¨çš„ç¬¬ä¸€ä¸ªã€‚
 		while (quick != null) {
 			slow = slow.next;
 			quick = quick.next;
@@ -28,7 +28,7 @@ public class PalindromeLinkedList {
 				break;
 			quick = quick.next;
 		}
-		// ·­×ªºó°ë²¿·ÖÁ´±í
+		// ç¿»è½¬ååŠéƒ¨åˆ†é“¾è¡¨
 		ListNode pre = null, cur = slow;
 		while (cur != null) {
 			ListNode temp = cur.next;
@@ -36,7 +36,7 @@ public class PalindromeLinkedList {
 			pre = cur;
 			cur = temp;
 		}
-		// ±È½ÏÁ½¶ÎÁ´±íÊÇ·ñ¹¹³É»ØÎÄ½á¹¹
+		// æ¯”è¾ƒä¸¤æ®µé“¾è¡¨æ˜¯å¦æ„æˆå›æ–‡ç»“æ„
 		ListNode p = pre, q = head;
 		while (p != null && q != null) {
 			if (p.val != q.val)
@@ -44,7 +44,7 @@ public class PalindromeLinkedList {
 			p = p.next;
 			q = q.next;
 		}
-		// ÖØ¹¹»ØÔ­À´µÄÁ´±í½á¹¹
+		// é‡æ„å›åŸæ¥çš„é“¾è¡¨ç»“æ„
 		ListNode pre2 = null;
 		while (pre != null) {
 			ListNode temp = pre.next;

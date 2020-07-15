@@ -20,17 +20,17 @@ public class PlusOne {
 		if (A == null || A.length == 0)
 			return A;
 		int index = A.length - 1;
-		// һλdigit����9ʱ+1��λ������0
+		// 一位digit上是9时+1进位，保留0
 		while (index >= 0 && A[index] == 9) {
 			A[index] = 0;
 			index--;
 		}
-		// ���λû�н�λʱ���ڵ�һ��С��9��λ+1���ء�
+		// 最高位没有进位时，在第一个小于9的位+1返回。
 		if (index >= 0) {
 			A[index]++;
 			return A;
 		}
-		// ���λ�н�λʱ��ֻ����ÿһλ����9����99999����Ҫnewһ���µ����飬��λΪ1������Ϊ0.
+		// 最高位有进位时，只可能每一位都是9，如99999。需要new一个新的数组，首位为1，其他为0.
 		else {
 			int[] B = new int[A.length + 1];
 			B[0] = 1;

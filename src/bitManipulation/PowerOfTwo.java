@@ -5,7 +5,7 @@ package bitManipulation;
  * @author caiger
  */
 public class PowerOfTwo {
-	// 设置命令行args参数的方法：run-->run configuration中选择对应的类，设置program arguments
+	// 璁剧疆鍛戒护琛宎rgs鍙傛暟鐨勬柟娉曪細run-->run configuration涓�夋嫨瀵瑰簲鐨勭被锛岃缃畃rogram arguments
 	public static void main(String[] args) {
 		String str = args[0];
 		int n = Integer.parseInt(str);

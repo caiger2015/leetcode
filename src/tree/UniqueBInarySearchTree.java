@@ -23,12 +23,12 @@ public class UniqueBInarySearchTree {
 	}
 
 	/**
-	 * ¶¯Ì¬¹æ»®£ºÒ»¹²i¸ö½áµã£¬µÚj¸ö½áµãÎª¸ù½áµãÊ±£¬×ó×ÓÊ÷ÓÉ1~j-1½áµã×é³É£¬ÓÒ×ÓÊ÷ÓÉj+1~i½áµã×é³É£¬
-	 * ÓÉÓÚÖ»¿¼ÂÇ½á¹¹ÎÊÌâ£¬¿ÉÒÔÀí½âÎª×ó×ÓÊ÷ÓÐj¸ö½Úµã£¬ÓÒ×ÓÊ÷ÓÐi-j-1¸ö½áµã¡£½»²æ×éºÏ¼´ÎªËùÓÐ½á¹¹
+	 * åŠ¨æ€è§„åˆ’ï¼šä¸€å…±iä¸ªç»“ç‚¹ï¼Œç¬¬jä¸ªç»“ç‚¹ä¸ºæ ¹ç»“ç‚¹æ—¶ï¼Œå·¦å­æ ‘ç”±1~j-1ç»“ç‚¹ç»„æˆï¼Œå³å­æ ‘ç”±j+1~iç»“ç‚¹ç»„æˆï¼Œ
+	 * ç”±äºŽåªè€ƒè™‘ç»“æž„é—®é¢˜ï¼Œå¯ä»¥ç†è§£ä¸ºå·¦å­æ ‘æœ‰jä¸ªèŠ‚ç‚¹ï¼Œå³å­æ ‘æœ‰i-j-1ä¸ªç»“ç‚¹ã€‚äº¤å‰ç»„åˆå³ä¸ºæ‰€æœ‰ç»“æž„
 	 * 
 	 * @param n
-	 *            ´Ó1~nµÄn¸öÊý±íÊ¾n¸ö²»Í¬µÄ½áµã
-	 * @return ²»Í¬½á¹¹µÄ¶þ²æÊ÷µÄ¸öÊý
+	 *            ä»Ž1~nçš„nä¸ªæ•°è¡¨ç¤ºnä¸ªä¸åŒçš„ç»“ç‚¹
+	 * @return ä¸åŒç»“æž„çš„äºŒå‰æ ‘çš„ä¸ªæ•°
 	 */
 	public static int numTrees(int n) {
 		int[] res = new int[n + 1];

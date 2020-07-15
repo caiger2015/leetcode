@@ -32,7 +32,7 @@ public class RecoverBinarySearchTree {
 
 	/**
 	 * @param root
-	 *            ÖĞĞò±éÀú¶ş²æÊ÷
+	 *            ä¸­åºéå†äºŒå‰æ ‘
 	 */
 	private static void inorderTranversal(TreeNode root) {
 		if (root == null)

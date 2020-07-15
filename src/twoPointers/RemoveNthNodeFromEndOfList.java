@@ -26,10 +26,10 @@ public class RemoveNthNodeFromEndOfList {
 	}
 
 	public static ListNode removeNthFromEnd(ListNode headListNode, int n) {
-		if (headListNode == null || n == 0)// ·ÀÓùĞÔ±à³Ì£¬Ôö¼Ó½¡×³ĞÔ
+		if (headListNode == null || n == 0)// é˜²å¾¡æ€§ç¼–ç¨‹ï¼Œå¢åŠ å¥å£®æ€§
 			return headListNode;
 		/*
-		 * Ã»±ØÒªÕâÑù×ö£¬²¢Ã»ÓĞ¸Ä±äfirstºÍsecondµÄÊµÀıÓò,²»ĞèÒªĞÂ½¨ÊµÀı¶ÔÏó
+		 * æ²¡å¿…è¦è¿™æ ·åšï¼Œå¹¶æ²¡æœ‰æ”¹å˜firstå’Œsecondçš„å®ä¾‹åŸŸ,ä¸éœ€è¦æ–°å»ºå®ä¾‹å¯¹è±¡
 		 * 
 		 * ListNode first = new ListNode(headListNode.val); ListNode second =
 		 * new ListNode(headListNode.val); first.next = headListNode.next;

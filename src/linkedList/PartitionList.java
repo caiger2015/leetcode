@@ -13,9 +13,9 @@ public class PartitionList {
 		System.out.print(partition3(new ListNode("26126432527"), 3));
 	}
 
-	// newÁ½¸öÍ·½áµã·Ö±ğ¹¹ÔìxÁ½±ßµÄÁ´±í£¬È»ºó°ÑËûÃÇÁ¬½ÓÆğÀ´£¬×¢Òâ·µ»Ø½ÚµãºÍÎ²½áµãÖ¸Ïò¿Õ
+	// newä¸¤ä¸ªå¤´ç»“ç‚¹åˆ†åˆ«æ„é€ xä¸¤è¾¹çš„é“¾è¡¨ï¼Œç„¶åæŠŠä»–ä»¬è¿æ¥èµ·æ¥ï¼Œæ³¨æ„è¿”å›èŠ‚ç‚¹å’Œå°¾ç»“ç‚¹æŒ‡å‘ç©º
 	public static ListNode partition3(ListNode head, int x) {
-		// Í·Ö¸Õë½áµã
+		// å¤´æŒ‡é’ˆç»“ç‚¹
 		ListNode smallHead = new ListNode(0), bigHead = new ListNode(0);
 		ListNode s = smallHead, b = bigHead;
 		while (head != null) {
@@ -33,7 +33,7 @@ public class PartitionList {
 		return smallHead.next;
 	}
 
-	// ÕÒµ½Í·½áµãhead¡¢Î²½ÚµãtailºÍ½áµãÊın£¬±éÀúÁ´±í½«>=xµÄ½áµã½ÓÔÚÎ²½áµã£¬×¢Òâ±£³ÖÁ´±í²»¶Ï£¬Î²½áµã×îºóÖ¸Ïònull
+	// æ‰¾åˆ°å¤´ç»“ç‚¹headã€å°¾èŠ‚ç‚¹tailå’Œç»“ç‚¹æ•°nï¼Œéå†é“¾è¡¨å°†>=xçš„ç»“ç‚¹æ¥åœ¨å°¾ç»“ç‚¹ï¼Œæ³¨æ„ä¿æŒé“¾è¡¨ä¸æ–­ï¼Œå°¾ç»“ç‚¹æœ€åæŒ‡å‘null
 	public static ListNode partition2(ListNode head, int x) {
 		if (head == null || head.next == null)
 			return head;
@@ -66,33 +66,33 @@ public class PartitionList {
 		return head;
 	}
 
-	// ÀûÓÃµİ¹é£¬Ã¿´ÎÕÒµ½ÏÂÒ»¸ö<xµÄ½áµã£¬½«>=xµÄ½áµã½ÓÔÚÎ²²¿£¬×îºóÎ²½áµãÖ¸¿Õ
+	// åˆ©ç”¨é€’å½’ï¼Œæ¯æ¬¡æ‰¾åˆ°ä¸‹ä¸€ä¸ª<xçš„ç»“ç‚¹ï¼Œå°†>=xçš„ç»“ç‚¹æ¥åœ¨å°¾éƒ¨ï¼Œæœ€åå°¾ç»“ç‚¹æŒ‡ç©º
 	public static ListNode partition(ListNode head, int x) {
 		if (head == null || head.next == null)
 			return head;
 		ListNode tail = head;
-		// »ñÈ¡Ä©Î²½Úµã
+		// è·å–æœ«å°¾èŠ‚ç‚¹
 		while (tail.next != null) {
 			tail = tail.next;
 		}
-		// µİ¹é»ñÈ¡ÏÂÒ»¸ö½Úµã¹¹ÔìÁ´±í£¬µ«ÊÇÄÚ´æ»á³¬±ê
+		// é€’å½’è·å–ä¸‹ä¸€ä¸ªèŠ‚ç‚¹æ„é€ é“¾è¡¨ï¼Œä½†æ˜¯å†…å­˜ä¼šè¶…æ ‡
 		ListNode res = getNext(head, x, tail);
 		return res;
 	}
 
 	/**
 	 * @param head
-	 *            µ±Ç°Í·½áµã
+	 *            å½“å‰å¤´ç»“ç‚¹
 	 * @param x
-	 *            Òª±È½ÏµÄÖµ
+	 *            è¦æ¯”è¾ƒçš„å€¼
 	 * @param tail
-	 *            µ±Ç°Î²½áµã
+	 *            å½“å‰å°¾ç»“ç‚¹
 	 * @return
 	 */
 	private static ListNode getNext(ListNode head, int x, ListNode tail) {
 		if (head == null)
 			return head;
-		// Ñ­»·½áÊøµÄ±ß½çÌõ¼şÊÇheadÔÙ´ÎÖ¸ÏòÍ·½Úµã£¬¼´ËùÓĞ½ÚµãµÄÖµ¾ù´óÓÚx
+		// å¾ªç¯ç»“æŸçš„è¾¹ç•Œæ¡ä»¶æ˜¯headå†æ¬¡æŒ‡å‘å¤´èŠ‚ç‚¹ï¼Œå³æ‰€æœ‰èŠ‚ç‚¹çš„å€¼å‡å¤§äºx
 		ListNode end = tail;
 		while (head != end && head.val >= x) {
 			tail.next = head;

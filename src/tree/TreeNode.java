@@ -24,7 +24,7 @@ public class TreeNode {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see java.lang.Object#toString() ÓÃ¡°#¡±±íÊ¾null£¬°´²ã´òÓ¡ÒÔ¸Ã½ÚµãÎª¸ù½ÚµãµÄ¶ş²æÊ÷
+	 * @see java.lang.Object#toString() ç”¨â€œ#â€è¡¨ç¤ºnullï¼ŒæŒ‰å±‚æ‰“å°ä»¥è¯¥èŠ‚ç‚¹ä¸ºæ ¹èŠ‚ç‚¹çš„äºŒå‰æ ‘
 	 */
 	@Override
 	public String toString() {

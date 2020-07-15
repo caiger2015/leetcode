@@ -1,5 +1,5 @@
 /**
- * ±³°üÌ°ĞÄ·¨:°´µ¥Î»ÖØÁ¿¼ÛÖµr[i]  =  v[i] / w[i]½µĞòÅÅÁĞ
+ * èƒŒåŒ…è´ªå¿ƒæ³•:æŒ‰å•ä½é‡é‡ä»·å€¼r[i]  =  v[i] / w[i]é™åºæ’åˆ—
  * 
  * @author caiger
  * 
@@ -12,28 +12,28 @@ import java.util.Scanner;
 public class GreedyOfBagpack {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		System.out.println("Please enter the number of objects(ÇëÊäÈëÎïÆ·µÄÊıÁ¿£º):");
+		System.out.println("Please enter the number of objects(è¯·è¾“å…¥ç‰©å“çš„æ•°é‡ï¼š):");
 		int n = in.nextInt();
-		int[] w = new int[n]; // ÎïÆ·ÖØÁ¿Êı×é
-		int[] v = new int[n]; // ÎïÆ·¼ÛÇ®Êı×é
+		int[] w = new int[n]; // ç‰©å“é‡é‡æ•°ç»„
+		int[] v = new int[n]; // ç‰©å“ä»·é’±æ•°ç»„
 		System.out
-				.println("Now, please enter the weight of these objects(ÏÖÔÚÇëÊäÈëÕâĞ©ÎïÆ·µÄÖØÁ¿£º)");
+				.println("Now, please enter the weight of these objects(ç°åœ¨è¯·è¾“å…¥è¿™äº›ç‰©å“çš„é‡é‡ï¼š)");
 		for (int i = 0; i < n; i++) {
 			w[i] = in.nextInt();
 		}
 		System.out
-				.println("Now, please enter the value of these objects(ÏÖÔÚÇëÊäÈëÕâĞ©ÎïÆ·µÄ¼ÛÖµ£º)");
+				.println("Now, please enter the value of these objects(ç°åœ¨è¯·è¾“å…¥è¿™äº›ç‰©å“çš„ä»·å€¼ï¼š)");
 		for (int i = 0; i < n; i++) {
 			v[i] = in.nextInt();
 		}
 		System.out
-				.println("Now, please enter the capacity of the pack(ÏÖÔÚÇëÊäÈë±³°üµÄÈİÁ¿£º)");
+				.println("Now, please enter the capacity of the pack(ç°åœ¨è¯·è¾“å…¥èƒŒåŒ…çš„å®¹é‡ï¼š)");
 		int c = in.nextInt();
 		in.close();
 		/**
-		 * °´µ¥Î»ÖØÁ¿¼ÛÖµr[i] = v[i] / w[i]½µĞòÅÅÁĞ
+		 * æŒ‰å•ä½é‡é‡ä»·å€¼r[i] = v[i] / w[i]é™åºæ’åˆ—
 		 * 
-		 * ps:ÅÅĞòÓÃµ½ÁËÑ¡ÔñÅÅĞò£¬ÏêÇéÇë²é¿´Ñ¡ÔñÅÅĞò
+		 * ps:æ’åºç”¨åˆ°äº†é€‰æ‹©æ’åºï¼Œè¯¦æƒ…è¯·æŸ¥çœ‹é€‰æ‹©æ’åº
 		 */
 		double startTime = System.currentTimeMillis();
 		double[] r = new double[n];
@@ -56,7 +56,7 @@ public class GreedyOfBagpack {
 			}
 		}
 		/**
-		 * ÅÅĞòºóµÄÖØÁ¿ºÍ¼ÛÖµ·Ö±ğ´æµ½w1[]ºÍv1[]ÖĞ
+		 * æ’åºåçš„é‡é‡å’Œä»·å€¼åˆ†åˆ«å­˜åˆ°w1[]å’Œv1[]ä¸­
 		 */
 		int[] w1 = new int[n];
 		int[] v1 = new int[n];
@@ -65,14 +65,14 @@ public class GreedyOfBagpack {
 			v1[i] = v[index[i]];
 		}
 		/**
-		 * ³õÊ¼»¯½âÏòÁ¿x[n]
+		 * åˆå§‹åŒ–è§£å‘é‡x[n]
 		 */
 		int[] x = new int[n];
 		for (int i = 0; i < n; i++) {
 			x[i] = 0;
 		}
 		/**
-		 * Çó½â²¢´òÓ¡½âÏòÁ¿
+		 * æ±‚è§£å¹¶æ‰“å°è§£å‘é‡
 		 */
 		for (int i = 0; i < n; i++) {
 			if (w1[i] < c) {
@@ -81,9 +81,9 @@ public class GreedyOfBagpack {
 			}
 		}
 		System.out
-				.println("The solution vector is(½âÏòÁ¿ÊÇ£º)" + Arrays.toString(x));
+				.println("The solution vector is(è§£å‘é‡æ˜¯ï¼š)" + Arrays.toString(x));
 		/**
-		 * ¸ù¾İ½âÏòÁ¿Çó³ö±³°üÖĞ´æ·ÅÎïÆ·µÄ×î´ó¼ÛÖµ²¢´òÓ¡
+		 * æ ¹æ®è§£å‘é‡æ±‚å‡ºèƒŒåŒ…ä¸­å­˜æ”¾ç‰©å“çš„æœ€å¤§ä»·å€¼å¹¶æ‰“å°
 		 */
 		int maxValue = 0;
 		for (int i = 0; i < n; i++) {
@@ -92,9 +92,9 @@ public class GreedyOfBagpack {
 		}
 		double endTime = System.currentTimeMillis();
 		System.out
-				.println("Now, the largest values of objects in the pack is(±³°üÖĞÎïÆ·µÄ×î´ó¼ÛÖµÎª£º)"
+				.println("Now, the largest values of objects in the pack is(èƒŒåŒ…ä¸­ç‰©å“çš„æœ€å¤§ä»·å€¼ä¸ºï¼š)"
 						+ maxValue);
-		System.out.println("Basic Statements take(»ù±¾Óï¾äÓÃÊ±)"
+		System.out.println("Basic Statements take(åŸºæœ¬è¯­å¥ç”¨æ—¶)"
 				+ (endTime - startTime) + " milliseconds!");
 	}
 }

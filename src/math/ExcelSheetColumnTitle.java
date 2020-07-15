@@ -11,16 +11,16 @@ public class ExcelSheetColumnTitle {
 }
 
 class solution4 {
-	// Àí½â´íÎó¡£¡£¡£¡£
+	// ç†è§£é”™è¯¯ã€‚ã€‚ã€‚ã€‚
 	public String convertToTitle1(int n) {
 		String sim = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		String res = "";
 		int i = 0;
-		int j = (n - 1) % 26;// (n-1)ÎªÁËºÃ¶ÁÈ¡×Ö·û´®
-		while (i + 1 <= (n - 1) / 26)// ÕâÀï£¨n-1)ÊÇÎªÁË±£Ö¤26µÄÕûÊı±¶Êä³öÕıÈ·
-										// ÒòÎªi±ê¼ÇµÄÊÂ×ÜÎ»Êı-1
+		int j = (n - 1) % 26;// (n-1)ä¸ºäº†å¥½è¯»å–å­—ç¬¦ä¸²
+		while (i + 1 <= (n - 1) / 26)// è¿™é‡Œï¼ˆn-1)æ˜¯ä¸ºäº†ä¿è¯26çš„æ•´æ•°å€è¾“å‡ºæ­£ç¡®
+										// å› ä¸ºiæ ‡è®°çš„äº‹æ€»ä½æ•°-1
 		{
-			res += sim.charAt(i % 26);// ¶Ô26È¡Óà£¬±£Ö¤³¬³ö26Î»ÊÇÒÀÈ»ÄÜÊä³ö
+			res += sim.charAt(i % 26);// å¯¹26å–ä½™ï¼Œä¿è¯è¶…å‡º26ä½æ˜¯ä¾ç„¶èƒ½è¾“å‡º
 			i++;
 		}
 		res += sim.charAt(j);
@@ -32,7 +32,7 @@ class solution4 {
 		String res = "";
 		while (n > 0) {
 			// res = sim.charAt((n-1)%26)+res;
-			// ¼ÆËã½á¹ûÎªintÀàĞÍ£¬±íÊ¾asc2ÂëÖµ£¬Ç¿ÖÆ×ª»»Îªchar
+			// è®¡ç®—ç»“æœä¸ºintç±»å‹ï¼Œè¡¨ç¤ºasc2ç å€¼ï¼Œå¼ºåˆ¶è½¬æ¢ä¸ºchar
 			char c = (char) ((n - 1) % 26 + 'A');
 			res = c + res;
 			n = (n - 1) / 26;

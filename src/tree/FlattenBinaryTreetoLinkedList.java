@@ -34,9 +34,9 @@ public class FlattenBinaryTreetoLinkedList {
 
 	}
 	/*
-	 * ÏÈ´æ´¢£¬ºó¸Ä±ä£¡
-	 * flattenÖ®ºóµÄË³ĞòÊÇÏÈĞò±éÀúµÄË³Ğò£¬µ«ÊÇÔÚµİ¹éµÄÍ¬Ê±»á¸Ä±äÊ÷µÄ½á¹¹£¬ËùÒÔÒª´¦ÀíÓÒ½áµãµÄÎ»ÖÃ£¬
-	 * ÏÈĞò±éÀúÊ±£¬ÓÒ½áµã·Åµ½ÔÚ×ó×ÓÊ÷×îÓÒ±ßµÄÄÇ¸ö½ÚµãµÄÓÒ½áµã
+	 * å…ˆå­˜å‚¨ï¼Œåæ”¹å˜ï¼
+	 * flattenä¹‹åçš„é¡ºåºæ˜¯å…ˆåºéå†çš„é¡ºåºï¼Œä½†æ˜¯åœ¨é€’å½’çš„åŒæ—¶ä¼šæ”¹å˜æ ‘çš„ç»“æ„ï¼Œæ‰€ä»¥è¦å¤„ç†å³ç»“ç‚¹çš„ä½ç½®ï¼Œ
+	 * å…ˆåºéå†æ—¶ï¼Œå³ç»“ç‚¹æ”¾åˆ°åœ¨å·¦å­æ ‘æœ€å³è¾¹çš„é‚£ä¸ªèŠ‚ç‚¹çš„å³ç»“ç‚¹
 	 */
 	public static void flattenTreeToLinkedList(TreeNode root){
 		if(root == null)
@@ -46,7 +46,7 @@ public class FlattenBinaryTreetoLinkedList {
 			root.right = root.left;
 			TreeNode mostRight = root.left;
 			root.left = null;
-			//ÕÒµ½×ó×ÓÊ÷×îÓÒ±ßµÄ½áµã£¬¼´ÎªÓÒº¢×Ó½áµãÔÚlinkedlistÖĞµÄÇ°Ò»¸ö½Úµã
+			//æ‰¾åˆ°å·¦å­æ ‘æœ€å³è¾¹çš„ç»“ç‚¹ï¼Œå³ä¸ºå³å­©å­ç»“ç‚¹åœ¨linkedlistä¸­çš„å‰ä¸€ä¸ªèŠ‚ç‚¹
 			while(mostRight.right != null||mostRight.left != null){
 				if(mostRight.right != null)
 					mostRight = mostRight.right;

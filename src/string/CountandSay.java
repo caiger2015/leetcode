@@ -19,8 +19,8 @@ public class CountandSay {
 	public static String countAndSay(int n) {
 		// if(n == 0)
 		// return "";
-		StringBuilder result = new StringBuilder("1");// µÚÒ»¸ö
-		for (int i = 0; i < n - 1; i++)// Ê£ÏÂµÄn-1¸ö
+		StringBuilder result = new StringBuilder("1");// ç¬¬ä¸€ä¸ª
+		for (int i = 0; i < n - 1; i++)// å‰©ä¸‹çš„n-1ä¸ª
 		{
 			StringBuilder temp = new StringBuilder();
 			for (int j = 0; j < result.length();) {

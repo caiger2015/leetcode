@@ -1,13 +1,10 @@
 package tree;
 
-import java.util.Deque;
-import java.util.LinkedList;
-
 /*
  * Given a binary tree, determine if it is height-balanced.
  * For this problem, a height-balanced binary tree is defined as a binary tree 
  * in which the depth of the two subtrees of every node never differ by more than 1.
- * AVLÆ½ºâ¶þ²æÊ÷£ºËüÊÇÒ»¿Å¿ÕÊ÷£¬»òÕßËüµÄ×óÓÒ×ÓÊ÷¸ß¶ÈÖ®²î¾ø¶ÔÖµ²»³¬¹ý1£¬ÇÒËüµÄ×óÓÒ×ÓÊ÷Ò²ÊÇÆ½ºâ¶þ²æÊ÷
+ * AVLå¹³è¡¡äºŒå‰æ ‘ï¼šå®ƒæ˜¯ä¸€é¢—ç©ºæ ‘ï¼Œæˆ–è€…å®ƒçš„å·¦å³å­æ ‘é«˜åº¦ä¹‹å·®ç»å¯¹å€¼ä¸è¶…è¿‡1ï¼Œä¸”å®ƒçš„å·¦å³å­æ ‘ä¹Ÿæ˜¯å¹³è¡¡äºŒå‰æ ‘
  */
 public class BalancedBinaryTree {
 
@@ -21,15 +18,15 @@ public class BalancedBinaryTree {
 		return getHeight(root) == -1 ? false : true;
 	}
 
-	// Éî¶ÈÓÅÏÈ·½Ê½µÝ¹é±éÀú×óÓÒ×ÓÊ÷
+	// æ·±åº¦ä¼˜å…ˆæ–¹å¼é€’å½’éåŽ†å·¦å³å­æ ‘
 	private int getHeight(TreeNode p) {
-		// Éè¶¨µÝ¹é·µ»ØÌõ¼þ
+		// è®¾å®šé€’å½’è¿”å›žæ¡ä»¶
 		if (p == null)
 			return 0;
-		// µÝ¹éµ÷ÓÃ
+		// é€’å½’è°ƒç”¨
 		int left = getHeight(p.left);
 		int right = getHeight(p.right);
-		// ¶ÔµÝ¹é·µ»Ø½á¹û½øÐÐÅÐ¶¨
+		// å¯¹é€’å½’è¿”å›žç»“æžœè¿›è¡Œåˆ¤å®š
 		if (left == -1 || right == -1)
 			return -1;
 		if (Math.abs(left - right) > 1)

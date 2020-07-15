@@ -13,8 +13,8 @@ public class TwoSum {
 	public static int[] twoSum(int[] nums, int target) {
 		Map<Integer, Integer> table = new HashMap<Integer, Integer>();
 		int[] res = new int[2];
-		// Èç¹û°ÑËùÓĞµÄÊı¶¼ÏÈ·ÅÔÚhashmapÀïÃæµÄ»°£¬ÔÚ²éÕÒÒ»¸öÊıµÄÏà¼ÓÊıÊÇ£¬Ëş±¾ÉíÒ²ÔÚ²éÕÒ·¶Î§ÄÚ£¬
-		// ÀıÈç£¬6-3 = 3£¬´ËÊ±»á²éÕÒµ½3
+		// å¦‚æœæŠŠæ‰€æœ‰çš„æ•°éƒ½å…ˆæ”¾åœ¨hashmapé‡Œé¢çš„è¯ï¼Œåœ¨æŸ¥æ‰¾ä¸€ä¸ªæ•°çš„ç›¸åŠ æ•°æ˜¯ï¼Œå¡”æœ¬èº«ä¹Ÿåœ¨æŸ¥æ‰¾èŒƒå›´å†…ï¼Œ
+		// ä¾‹å¦‚ï¼Œ6-3 = 3ï¼Œæ­¤æ—¶ä¼šæŸ¥æ‰¾åˆ°3
 		// for(int i = 0;i<nums.length;i++){
 		// table.put(nums[i],i+1);
 		// }

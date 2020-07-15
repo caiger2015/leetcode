@@ -21,7 +21,7 @@ public class PalindromeLinkedList {
 		if (x == 0)
 			return true;
 		int temp = x, len = 1;
-		// È¡µÈ£¬lenÎªpow(10£¬xµÄÎ»Êý-1)
+		// å–ç­‰ï¼Œlenä¸ºpow(10ï¼Œxçš„ä½æ•°-1)
 		while (temp >= 10) {
 			len *= 10;
 			temp /= 10;

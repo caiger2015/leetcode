@@ -14,7 +14,7 @@ public class Isomorphic {
 	}
 
 	/*
-	 * ¹¹Ôìhashtable£¬¼üÖµ¹ØÏµÎªsÓëtÖĞ¶ÔÎ»ÔªËØµÄ¶ÔÓ¦¹ØÏµ£¬¼´sÖĞµÄÔªËØÊÇsTableµÄ½¡£¬tTableµÄÖµ
+	 * æ„é€ hashtableï¼Œé”®å€¼å…³ç³»ä¸ºsä¸tä¸­å¯¹ä½å…ƒç´ çš„å¯¹åº”å…³ç³»ï¼Œå³sä¸­çš„å…ƒç´ æ˜¯sTableçš„å¥ï¼ŒtTableçš„å€¼
 	 */
 	public static boolean isIsormophic(String s, String t) {
 		if (s == null && t == null || s.length() == 0 && t.length() == 0)
@@ -44,8 +44,8 @@ public class Isomorphic {
 		return true;
 	}
 
-	// Õâ¸ö·½·¨Ã¿´Î´æÖüµÄÊÇÉÏÒ»¸ö¶ÔÓ¦ÔªËØµÄÎ»ÖÃ£¬ÔÚÅĞ¶ÏµÚ129¸öÔªËØµÄÊ±ºò³öÏÖÁËÎÊÌâ£¡£¡
-	// ¼¯ºÏÖĞµÄ·ºĞÍÀàĞÍ²»ÄÜÊÇ»ù±¾ÀàĞÍ£¬¶ÔÓÚ»ù±¾ÀàĞÍÒªÊ¹ÓÃ°ü×°Àà£¬ÔÚ±È½ÏµÄÊ±ºòÓ¦¸ÃÓÃequals·½·¨£¡£¡£¡£¡£¡
+	// è¿™ä¸ªæ–¹æ³•æ¯æ¬¡å­˜è´®çš„æ˜¯ä¸Šä¸€ä¸ªå¯¹åº”å…ƒç´ çš„ä½ç½®ï¼Œåœ¨åˆ¤æ–­ç¬¬129ä¸ªå…ƒç´ çš„æ—¶å€™å‡ºç°äº†é—®é¢˜ï¼ï¼
+	// é›†åˆä¸­çš„æ³›å‹ç±»å‹ä¸èƒ½æ˜¯åŸºæœ¬ç±»å‹ï¼Œå¯¹äºåŸºæœ¬ç±»å‹è¦ä½¿ç”¨åŒ…è£…ç±»ï¼Œåœ¨æ¯”è¾ƒçš„æ—¶å€™åº”è¯¥ç”¨equalsæ–¹æ³•ï¼ï¼ï¼ï¼ï¼
 	public static boolean isIsormophic1(String s, String t) {
 		if (s == null && t == null || s.length() == 0 && t.length() == 0)
 			return true;
@@ -57,8 +57,8 @@ public class Isomorphic {
 			int sc = s.charAt(i);
 			int tc = t.charAt(i);
 			if (sTable.containsKey(sc) && tTable.containsKey(tc)) {
-				// ÕâÀïget·½·¨·µ»ØµÄÊÇIntegerÀàĞÍµÄ¶ÔÏó£¬±È½ÏµÄÊ±ºòÓ¦¸ÃÓÃequals·½·¨£¡£¡£¡
-				// ¡° == ¡±±È½ÏµÄÊÇÊÇ·ñ¾ßÓĞÏàÍ¬µÄµØÖ·,¼´¾ßÓĞÏàÍ¬µÄÒıÓÃ£¡
+				// è¿™é‡Œgetæ–¹æ³•è¿”å›çš„æ˜¯Integerç±»å‹çš„å¯¹è±¡ï¼Œæ¯”è¾ƒçš„æ—¶å€™åº”è¯¥ç”¨equalsæ–¹æ³•ï¼ï¼ï¼
+				// â€œ == â€æ¯”è¾ƒçš„æ˜¯æ˜¯å¦å…·æœ‰ç›¸åŒçš„åœ°å€,å³å…·æœ‰ç›¸åŒçš„å¼•ç”¨ï¼
 				// if(sTable.get(sc). == tTable.get(tc)){
 				if (sTable.get(sc).equals(tTable.get(tc))) {
 					sTable.put(sc, i);

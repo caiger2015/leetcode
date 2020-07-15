@@ -14,8 +14,8 @@ public class RotateArray {
 	}
 
 	/*
-	 * ·Ö²½Öè·­×ª£ºµÚÒ»²½·­×ªÕû¸öÊý×é£¬µÚ¶þ²¿·Ö±ð·­×ªÁ½¸ö×ÓÊý×é£¬ ÀàËÆµÄÀý×Ó£ºrotate bits£¬·­×ªÒ»¸ö2^nÎ»ÊýµÄËùÓÐ±ÈÌØÎ»£¬
-	 * ÕâÖÖ·½·¨²»ÓÃ¿¼ÂÇÔ½½ç£¬²ÉÓÃÒÆÎ»>>>,<<<,&Ä³¸öÊýÈ¡Î»µÄ·½·¨¡£
+	 * åˆ†æ­¥éª¤ç¿»è½¬ï¼šç¬¬ä¸€æ­¥ç¿»è½¬æ•´ä¸ªæ•°ç»„ï¼Œç¬¬äºŒéƒ¨åˆ†åˆ«ç¿»è½¬ä¸¤ä¸ªå­æ•°ç»„ï¼Œ ç±»ä¼¼çš„ä¾‹å­ï¼šrotate bitsï¼Œç¿»è½¬ä¸€ä¸ª2^nä½æ•°çš„æ‰€æœ‰æ¯”ç‰¹ä½ï¼Œ
+	 * è¿™ç§æ–¹æ³•ä¸ç”¨è€ƒè™‘è¶Šç•Œï¼Œé‡‡ç”¨ç§»ä½>>>,<<<,&æŸä¸ªæ•°å–ä½çš„æ–¹æ³•ã€‚
 	 */
 	public void rotate(int[] nums, int k) {
 		int n = nums.length;
@@ -39,12 +39,12 @@ public class RotateArray {
 	}
 
 	/*
-	 * ´Ó½á¹ûÀ´¿´£¬µÚi¸öÔªËØµÄ×îÖÕÎ»ÖÃÊÇ£¨i+k£©%n£© ËùÒÔÖ»Òª±éÀúÍêÃ¿¸öÔªËØÈ·¶¨Î»ÖÃ¼´¿É
+	 * ä»Žç»“æžœæ¥çœ‹ï¼Œç¬¬iä¸ªå…ƒç´ çš„æœ€ç»ˆä½ç½®æ˜¯ï¼ˆi+kï¼‰%nï¼‰ æ‰€ä»¥åªè¦éåŽ†å®Œæ¯ä¸ªå…ƒç´ ç¡®å®šä½ç½®å³å¯
 	 */
 	public static void rotate3(int[] nums, int k) {
 		int n = nums.length;
 		/*
-		 * ±ðÍü¼Ç£¡£¡£¡ÅÐ¶ÏÌØÊâÇé¿ö£¬null,0,Integer.MINVALUEµÈ
+		 * åˆ«å¿˜è®°ï¼ï¼ï¼åˆ¤æ–­ç‰¹æ®Šæƒ…å†µï¼Œnull,0,Integer.MINVALUEç­‰
 		 */
 		if (nums == null || k <= 0 || n <= 0)
 			return;
@@ -52,7 +52,7 @@ public class RotateArray {
 		k %= n;
 		int next = start;
 		/*
-		 * ±éÀúÒ»´Î£¬¾­¹ýµÄÊÇ£¨next+k£©%n ¼ä¸ôÎªkµÄÊý£¬ ´ÓµÚÒ»¸öÊýstart¿ªÊ¼ £¬±éÀúÍê±ØÈ»»á»Øµ½start
+		 * éåŽ†ä¸€æ¬¡ï¼Œç»è¿‡çš„æ˜¯ï¼ˆnext+kï¼‰%n é—´éš”ä¸ºkçš„æ•°ï¼Œ ä»Žç¬¬ä¸€ä¸ªæ•°startå¼€å§‹ ï¼ŒéåŽ†å®Œå¿…ç„¶ä¼šå›žåˆ°start
 		 */
 		int temp = nums[start];
 		for (int i = 0; i < n; i++) {
@@ -62,14 +62,14 @@ public class RotateArray {
 			temp = temp2;
 			if (start == next) {
 				start++;
-				next = start % n;// ²»ÒªÔ½½ç
+				next = start % n;// ä¸è¦è¶Šç•Œ
 				temp = nums[next];
 			}
 		}
 	}
 
 	/*
-	 * ¿Õ¼ä¸´ÔÓ¶ÈO£¨n£©
+	 * ç©ºé—´å¤æ‚åº¦Oï¼ˆnï¼‰
 	 */
 	public void rotate2(int[] nums, int k) {
 		int n = nums.length;
@@ -86,7 +86,7 @@ public class RotateArray {
 	}
 
 	/*
-	 * ÒÆ¶¯´ÎÊýÌ«¶à£¬Ê±¼ä¸´ÔÓ¶ÈÌ«´óÁËO£¨k*n£©
+	 * ç§»åŠ¨æ¬¡æ•°å¤ªå¤šï¼Œæ—¶é—´å¤æ‚åº¦å¤ªå¤§äº†Oï¼ˆk*nï¼‰
 	 */
 	public static void rotate1(int[] nums, int k) {
 		k %= nums.length;

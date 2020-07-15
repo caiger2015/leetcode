@@ -1,8 +1,6 @@
 package tree;
 
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -22,7 +20,7 @@ public class PathSum2 {
 
 	public List<List<Integer>> pathSum(TreeNode root, int sum) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
-		// ÏÈ¸ùË³Ğò±éÀú¶ş²æÊ÷£¬µİ¹é·½·¨
+		// å…ˆæ ¹é¡ºåºéå†äºŒå‰æ ‘ï¼Œé€’å½’æ–¹æ³•
 		List<Integer> path = new ArrayList<Integer>();
 		getPath(root, res, sum, path);
 		return res;
@@ -30,43 +28,43 @@ public class PathSum2 {
 
 	/**
 	 * @param p
-	 *            µİ¹éµ±Ç°µÄ¶ş²æÊ÷µÄ¸ù½áµã
+	 *            é€’å½’å½“å‰çš„äºŒå‰æ ‘çš„æ ¹ç»“ç‚¹
 	 * @param res
-	 *            Òª·µ»ØµÄpath list
+	 *            è¦è¿”å›çš„path list
 	 * @param sum
-	 *            µİ¹éµ±Ç°µÄËùÇó½á¹û
+	 *            é€’å½’å½“å‰çš„æ‰€æ±‚ç»“æœ
 	 * @param path
-	 *            µİ¹é¹ı³ÌÖĞ´æ´¢Â·¾¶µÄlist Tips£º¶ş²æÊ÷ÎÊÌâµÄÇó½â¿ò¼ÜÊ½¶ş²æÊ÷ÏÈ¡¢ÖĞ¡¢ºóĞòµÄµİ¹é±éÀú¡£
-	 *            ÔÚµİ¹éµ÷ÓÃµÄ¹ı³ÌÖĞ£¬²»½ö¿ÉÒÔÍ¨¹ı·µ»ØÖµÀ´Çó½â£¬»¹¿ÉÒÔÍ¨¹ı´«µİµÄ²ÎÊıÀ´Çó½â£¬
-	 *            ÔÚµİ¹éµÄ¿ªÊ¼²¿·ÖÅĞ¶¨µİ¹é·µ»ØµÄÌõ¼ş£¬½øÈëµÄµØ·½¸üĞÂ´«µİµÄ²ÎÊı£¬Ìø³öµÄµØ·½Î¬»¤´«µİµÄ²ÎÊı
+	 *            é€’å½’è¿‡ç¨‹ä¸­å­˜å‚¨è·¯å¾„çš„list Tipsï¼šäºŒå‰æ ‘é—®é¢˜çš„æ±‚è§£æ¡†æ¶å¼äºŒå‰æ ‘å…ˆã€ä¸­ã€ååºçš„é€’å½’éå†ã€‚
+	 *            åœ¨é€’å½’è°ƒç”¨çš„è¿‡ç¨‹ä¸­ï¼Œä¸ä»…å¯ä»¥é€šè¿‡è¿”å›å€¼æ¥æ±‚è§£ï¼Œè¿˜å¯ä»¥é€šè¿‡ä¼ é€’çš„å‚æ•°æ¥æ±‚è§£ï¼Œ
+	 *            åœ¨é€’å½’çš„å¼€å§‹éƒ¨åˆ†åˆ¤å®šé€’å½’è¿”å›çš„æ¡ä»¶ï¼Œè¿›å…¥çš„åœ°æ–¹æ›´æ–°ä¼ é€’çš„å‚æ•°ï¼Œè·³å‡ºçš„åœ°æ–¹ç»´æŠ¤ä¼ é€’çš„å‚æ•°
 	 *
 	 */
-	// ÏÈĞòµİ¹éµÄ·½Ê½µ÷ÓÃ£¬ÔÚµİ¹é¹ı³ÌÖĞ´«µİpathÒª½øĞĞÎ¬»¤
+	// å…ˆåºé€’å½’çš„æ–¹å¼è°ƒç”¨ï¼Œåœ¨é€’å½’è¿‡ç¨‹ä¸­ä¼ é€’pathè¦è¿›è¡Œç»´æŠ¤
 	private void getPath(TreeNode p, List<List<Integer>> res, int sum,
 			List<Integer> path) {
-		// ¿ªÊ¼
+		// å¼€å§‹
 		if (p == null)
 			return;
-		// ½øÈë
+		// è¿›å…¥
 		sum -= p.val;
 		path.add(p.val);
 		if (p.left == null && p.right == null && sum == 0) {
-			// Ã¿´ÎÔÚresÖĞ¼ÓÈënewµÄpathÂ·¾¶
+			// æ¯æ¬¡åœ¨resä¸­åŠ å…¥newçš„pathè·¯å¾„
 			res.add(new ArrayList<Integer>(path));
 		}
 		if (p.left != null) {
 			getPath(p.left, res, sum, path);
-			// Ò»´Îµİ¹é½áÊøÊ±ÒÆ³ıÕâ´Îµİ¹éÊ±¼ÓÈëµ½pathÖĞµÄÔªËØ£¬Ë÷ÒıÎª×îºóÒ»Î»
-			// sumÒòÎªÊÇ»ù±¾ÀàĞÍ£¬Öµ´«µİ£¬²»ĞèÒª½øĞĞÎ¬»¤
+			// ä¸€æ¬¡é€’å½’ç»“æŸæ—¶ç§»é™¤è¿™æ¬¡é€’å½’æ—¶åŠ å…¥åˆ°pathä¸­çš„å…ƒç´ ï¼Œç´¢å¼•ä¸ºæœ€åä¸€ä½
+			// sumå› ä¸ºæ˜¯åŸºæœ¬ç±»å‹ï¼Œå€¼ä¼ é€’ï¼Œä¸éœ€è¦è¿›è¡Œç»´æŠ¤
 			path.remove(path.size() - 1);
 		}
 		if (p.right != null) {
 			getPath(p.right, res, sum, path);
-			// Ìø³ö
+			// è·³å‡º
 			path.remove(path.size() - 1);
 		}
 	}
-	// Î´ÑéÖ¤£ºÓÃÑ­»·ÊµÏÖµİ¹éµÄË¼Â·
+	// æœªéªŒè¯ï¼šç”¨å¾ªç¯å®ç°é€’å½’çš„æ€è·¯
 	// private List<List<Integer>> pathSum2(TreeNode root, int sum){
 	// List<List<Integer>> res = new ArrayList<List<Integer>>();
 	// if(root==null){
@@ -82,7 +80,7 @@ public class PathSum2 {
 	// path.add(temp);
 	// temp=temp.left;
 	// }
-	// //´ËÊ±stackÖĞ´æµÄ²»ÊÇpathÂ·¾¶£¬
+	// //æ­¤æ—¶stackä¸­å­˜çš„ä¸æ˜¯pathè·¯å¾„ï¼Œ
 	// temp=stack.pollLast();
 	// if(temp.right==null){
 	// if(temp.left==null&&sum==0){

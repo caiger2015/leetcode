@@ -17,7 +17,7 @@ public class LinkedListCycle {
 	}
 
 	/**
-	 * ¿ìÂıÖ¸Õë£¬ÓĞ»·Ôò»áÏàÓö
+	 * å¿«æ…¢æŒ‡é’ˆï¼Œæœ‰ç¯åˆ™ä¼šç›¸é‡
 	 * 
 	 * @param head
 	 * @return

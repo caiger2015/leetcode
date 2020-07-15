@@ -7,8 +7,8 @@ import java.util.List;
 /*
  * Given an array S of n integers, are there elements a, b, c in S such that a + b + c  =  0?
  * Find all unique triplets in the array which gives the sum of zero
- * ±©Á¦Ñ°ÕÒÊ±¼ä¸´ÔÓ¶ÈO(n^3)£¬¶øÇÒÒª´¦ÀíÅÅĞòÎÊÌâ£¬¿ÉÒÔÏÈ´¦ÀíÅÅĞòÎÊÌâArrays.sort();
- * ¶ÔÅÅºÃĞòµÄÊıÁĞ´¦Àí¸´ÔÓ¶ÈµÍ,¶øÇÒ¿ÉÒÔºÜºÃµÄ´¦ÀíÖØ¸´ÎÊÌâ
+ * æš´åŠ›å¯»æ‰¾æ—¶é—´å¤æ‚åº¦O(n^3)ï¼Œè€Œä¸”è¦å¤„ç†æ’åºé—®é¢˜ï¼Œå¯ä»¥å…ˆå¤„ç†æ’åºé—®é¢˜Arrays.sort();
+ * å¯¹æ’å¥½åºçš„æ•°åˆ—å¤„ç†å¤æ‚åº¦ä½,è€Œä¸”å¯ä»¥å¾ˆå¥½çš„å¤„ç†é‡å¤é—®é¢˜
  */
 public class Sum3 {
 
@@ -21,10 +21,10 @@ public class Sum3 {
 	public List<List<Integer>> threeSum(int[] num) {
 		if (num.length <= 2 || num == null)
 			return res;
-		Arrays.sort(num);// ÅÅĞòÊı×é£¬¶ÔÓĞĞòÊı×é½øĞĞ²éÕÒĞ§ÂÊ¸ß
+		Arrays.sort(num);// æ’åºæ•°ç»„ï¼Œå¯¹æœ‰åºæ•°ç»„è¿›è¡ŒæŸ¥æ‰¾æ•ˆç‡é«˜
 		int len = num.length;
 		for (int i = 0; i < len - 2 && num[i] <= 0; i++) {
-			// ÅÅ³öÖØ¸´µÄ½á¹û
+			// æ’å‡ºé‡å¤çš„ç»“æœ
 			if (i > 0 && num[i] == num[i - 1])
 				continue;
 			find(num, i + 1, len - 1, num[i]);
@@ -33,7 +33,7 @@ public class Sum3 {
 	}
 
 	public void find(int[] num, int begin, int end, int target) {
-		// Ë«Ö¸ÕëÑ°ÕÒ£¬±ÈË«²ãforÑ­»·Ê±¼ä¸´ÔÓ¶ÈµÍ£¬ÒòÎªÒÑ¾­ÅÅĞòÁË
+		// åŒæŒ‡é’ˆå¯»æ‰¾ï¼Œæ¯”åŒå±‚forå¾ªç¯æ—¶é—´å¤æ‚åº¦ä½ï¼Œå› ä¸ºå·²ç»æ’åºäº†
 		while (begin < end) {
 			if (target + num[begin] + num[end] == 0) {
 				List<Integer> ans = new ArrayList<Integer>();
@@ -41,7 +41,7 @@ public class Sum3 {
 				ans.add(num[begin]);
 				ans.add(num[end]);
 				res.add(ans);
-				// ÅÅ³ıÏàÍ¬µÄËÑË÷
+				// æ’é™¤ç›¸åŒçš„æœç´¢
 				while (begin < end && num[begin] == num[begin + 1])
 					begin++;
 				while (begin < end && num[end] == num[end - 1])

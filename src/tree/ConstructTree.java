@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * ÎªÁË½øĞĞµ÷ÊÔ¶ø´´½¨µÄÀà£¬¿ÉÒÔ¸ù¾İleetcode¶Ô¶ş²æÊ÷µÄ±íÏÖĞÎÊ½½¨Á¢¶ş²æÊ÷£¬¼´ÓÃ¡°#¡±±íÊ¾nullµÄ²ã±éÀú
+ * ä¸ºäº†è¿›è¡Œè°ƒè¯•è€Œåˆ›å»ºçš„ç±»ï¼Œå¯ä»¥æ ¹æ®leetcodeå¯¹äºŒå‰æ ‘çš„è¡¨ç°å½¢å¼å»ºç«‹äºŒå‰æ ‘ï¼Œå³ç”¨â€œ#â€è¡¨ç¤ºnullçš„å±‚éå†
  * 
  * @author caiger
  */
@@ -34,18 +34,18 @@ public class ConstructTree {
 		System.out.println(new LevelorderTraversal()
 				.levelorderTraversal(constructTree("1#23#45")));
 	}
-	//¶ş²æÊ÷²ã±éÀúµÄÄæ¹ı³Ì£¬ÓÃ"#"´úÌæ¿ÕµÄ½áµã°Ñ¶ş²æÊ÷¿´³ÉÒ»¿ÃÂú¶ş²æÊ÷¡£
+	//äºŒå‰æ ‘å±‚éå†çš„é€†è¿‡ç¨‹ï¼Œç”¨"#"ä»£æ›¿ç©ºçš„ç»“ç‚¹æŠŠäºŒå‰æ ‘çœ‹æˆä¸€æ£µæ»¡äºŒå‰æ ‘ã€‚
 	public static TreeNode constructTree(String s) {
 		if (s == null)
 			return null;
-		TreeNode root = new TreeNode(s.charAt(0) - '0');// char¿ÉÒÔÒşÊ½×ª»»³Éint
+		TreeNode root = new TreeNode(s.charAt(0) - '0');// charå¯ä»¥éšå¼è½¬æ¢æˆint
 		Queue<TreeNode> que = new LinkedList<TreeNode>();
 		que.add(root);
 		int i = 1, n = s.length();
 		TreeNode temp;
 		while (!que.isEmpty() && i < n) {
 			temp = que.poll();
-			// Ô½½çµÄÅĞ¶¨·ÅÔÚ&&µÄÇ°±ß
+			// è¶Šç•Œçš„åˆ¤å®šæ”¾åœ¨&&çš„å‰è¾¹
 			if (i < n && s.charAt(i) != '#') {
 				temp.left = new TreeNode(s.charAt(i) - '0');
 				que.add(temp.left);

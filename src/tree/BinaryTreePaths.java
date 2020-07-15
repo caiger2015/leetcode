@@ -44,7 +44,7 @@ public class BinaryTreePaths {
 		if (root == null) {
 			return;
 		}
-		// ×¢ÊÍµôµÄ·½Ê½²»ÐÐ£¬¹«ÓÃÒ»¸öpath²»¿ÉÒÔ
+		// æ³¨é‡ŠæŽ‰çš„æ–¹å¼ä¸è¡Œï¼Œå…¬ç”¨ä¸€ä¸ªpathä¸å¯ä»¥
 		if (root.left != null) {
 			StringBuffer temp1 = new StringBuffer(path);
 			temp1.append(root.val + "->");

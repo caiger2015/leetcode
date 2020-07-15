@@ -26,7 +26,7 @@ public class IntersectionOfTwoLinkedLists {
 	}
 
 	/*
-	 * Èç¹ûÏà½»£¬ÄÇÃ´Ä©Î²½Úµã±ØÈ»ÏàÍ¬£¬¼ÇÂ¼ÏÂ¸÷×ÔµÄ³¤¶È£¬Ïà²î£¨|lenA-lenB|²½±éÀú¾Í¿ÉÏàÓö
+	 * å¦‚æœç›¸äº¤ï¼Œé‚£ä¹ˆæœ«å°¾èŠ‚ç‚¹å¿…ç„¶ç›¸åŒï¼Œè®°å½•ä¸‹å„è‡ªçš„é•¿åº¦ï¼Œç›¸å·®ï¼ˆ|lenA-lenB|æ­¥éå†å°±å¯ç›¸é‡
 	 */
 	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 		if (headA == null || headB == null)
@@ -62,19 +62,19 @@ public class IntersectionOfTwoLinkedLists {
 	}
 
 	/*
-	 * ²»ºÃµÄË¼Â·
+	 * ä¸å¥½çš„æ€è·¯
 	 */
 	public static ListNode getIntersectionNode1(ListNode headA, ListNode headB) {
 		if (headA == null || headB == null)
 			return null;
 		ListNode p = headA;
 		ListNode q = headB;
-		while (p.next != null && q.next != null)// ÕÒ³ö³¤µÄÄÇ¸öÁ´±í
+		while (p.next != null && q.next != null)// æ‰¾å‡ºé•¿çš„é‚£ä¸ªé“¾è¡¨
 		{
 			p = p.next;
 			q = q.next;
 		}
-		if (p.next == null)// Ê¼ÖÕ°ÑpÉè³É³¤µÄÄÇ¸ö£¬¶Ô³ÆĞÔÎÊÌâµÄ¿¼ÂÇË¼Â·£¬Ö»¿¼ÂÇÒ»ÖÖÇé¿ö
+		if (p.next == null)// å§‹ç»ˆæŠŠpè®¾æˆé•¿çš„é‚£ä¸ªï¼Œå¯¹ç§°æ€§é—®é¢˜çš„è€ƒè™‘æ€è·¯ï¼Œåªè€ƒè™‘ä¸€ç§æƒ…å†µ
 		{
 			p = headB;
 			q = headA;

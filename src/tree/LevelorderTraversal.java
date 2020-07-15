@@ -20,9 +20,9 @@ public class LevelorderTraversal {
 		int pre = 1, cur = 0;
 		que.add(root);
 		while (!que.isEmpty()) {
-			// µØ·½±äÁ¿Ó¦µ±ÔÚÑ­»·ÄÚ¶¨Òå£¬Ã¿´Î¶¼½¨Á¢ĞÂÊµÀı
+			// åœ°æ–¹å˜é‡åº”å½“åœ¨å¾ªç¯å†…å®šä¹‰ï¼Œæ¯æ¬¡éƒ½å»ºç«‹æ–°å®ä¾‹
 			List<Integer> nextList = new ArrayList<Integer>();
-			// nextList.clear();ÔÚresÖĞÌí¼ÓµÄÊÇnextListµÄÒıÓÃÀàĞÍ£¬ÕâÒ»²½»á°ÑresÖĞµÄnextListÒ²Çå¿Õ£¡
+			// nextList.clear();åœ¨resä¸­æ·»åŠ çš„æ˜¯nextListçš„å¼•ç”¨ç±»å‹ï¼Œè¿™ä¸€æ­¥ä¼šæŠŠresä¸­çš„nextListä¹Ÿæ¸…ç©ºï¼
 			while (pre != 0) {
 				TreeNode temp = que.poll();
 				pre--;
@@ -42,7 +42,7 @@ public class LevelorderTraversal {
 		}
 		return res;
 	}
-	//´Óµ×²¿Êä³öÃ¿Ò»ĞĞ£¬ÓÃstack´æ´¢ÏÈ½øºó³ö
+	//ä»åº•éƒ¨è¾“å‡ºæ¯ä¸€è¡Œï¼Œç”¨stackå­˜å‚¨å…ˆè¿›åå‡º
 	public List<List<Integer>> levelOrderBottom(TreeNode root) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		if (root == null)
@@ -53,9 +53,9 @@ public class LevelorderTraversal {
 		int pre = 1, now = 0;
 		que.add(root);
 		while (!que.isEmpty()) {
-			// µØ·½±äÁ¿Ó¦µ±ÔÚÑ­»·ÄÚ¶¨Òå£¬Ã¿´Î¶¼½¨Á¢ĞÂÊµÀı
+			// åœ°æ–¹å˜é‡åº”å½“åœ¨å¾ªç¯å†…å®šä¹‰ï¼Œæ¯æ¬¡éƒ½å»ºç«‹æ–°å®ä¾‹
 			List<Integer> nextList = new ArrayList<Integer>();
-			// nextList.clear();ÔÚresÖĞÌí¼ÓµÄÊÇnextListµÄÒıÓÃÀàĞÍ£¬ÕâÒ»²½»á°ÑresÖĞµÄnextListÒ²Çå¿Õ£¡
+			// nextList.clear();åœ¨resä¸­æ·»åŠ çš„æ˜¯nextListçš„å¼•ç”¨ç±»å‹ï¼Œè¿™ä¸€æ­¥ä¼šæŠŠresä¸­çš„nextListä¹Ÿæ¸…ç©ºï¼
 			while (pre != 0) {
 				TreeNode temp = que.poll();
 				pre--;

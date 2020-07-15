@@ -31,9 +31,9 @@ public class SumRootToLeafNumbers {
 	}
 
 	/**
-	 * @param pµ±Ç°µÄ½áµã
-	 * @param resµ±Ç°µÄºÍ
-	 * @param numbers´æ´¢Ò»Ìõroot-leafµÄÊı×Ö
+	 * @param på½“å‰çš„ç»“ç‚¹
+	 * @param reså½“å‰çš„å’Œ
+	 * @param numberså­˜å‚¨ä¸€æ¡root-leafçš„æ•°å­—
 	 */
 	private static void getNumbers(TreeNode p, int res,
 			ArrayList<Integer> numbers) {

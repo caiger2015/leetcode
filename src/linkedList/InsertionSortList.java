@@ -23,26 +23,26 @@ public class InsertionSortList {
 		tail.next = null;
 		while (insertNode != null) {
 			ListNode cur = head, pre = null;
-			// ÕÒµ½²åÈëµÄÎ»ÖÃ
+			// æ‰¾åˆ°æ’å…¥çš„ä½ç½®
 			while (cur != null && insertNode.val >= cur.val) {
 				pre = cur;
 				cur = cur.next;
 			}
-			// ²åÈëÔÚÎ²²¿£¬Î²½áµãµÄnextÎªnull
+			// æ’å…¥åœ¨å°¾éƒ¨ï¼Œå°¾ç»“ç‚¹çš„nextä¸ºnull
 			if (cur == null) {
 				tail.next = insertNode;
 				tail = insertNode;
 				insertNode = insertNode.next;
 				tail.next = null;
 			}
-			// ²åÈëÔÚÍ·²¿
+			// æ’å…¥åœ¨å¤´éƒ¨
 			else if (pre == null) {
 				ListNode temp = insertNode.next;
 				insertNode.next = head;
 				head = insertNode;
 				insertNode = temp;
 			}
-			// ²åÈëÔÚÖĞ¼ä
+			// æ’å…¥åœ¨ä¸­é—´
 			else {
 				ListNode temp = insertNode.next;
 				pre.next = insertNode;

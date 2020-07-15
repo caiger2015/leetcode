@@ -36,12 +36,12 @@ public class FourSum {
 						temp.add(nums[j]);
 						temp.add(nums[k]);
 						temp.add(nums[l]);
-						// ÀûÓÃhashsetÅĞ¶ÏÃ¿×é½á¹ûÊÇ·ñÏàÍ¬
+						// åˆ©ç”¨hashsetåˆ¤æ–­æ¯ç»„ç»“æœæ˜¯å¦ç›¸åŒ
 						if (!set.contains(temp)) {
 							set.add(temp);
 							res.add(temp);
 						}
-						// ²»ÄÜÓĞÏàÍ¬µÄ×é
+						// ä¸èƒ½æœ‰ç›¸åŒçš„ç»„
 						k++;
 						l--;
 					} else if (sum < target)

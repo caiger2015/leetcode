@@ -21,7 +21,7 @@ class MyStack {
 	private LinkedList<Integer> topQue = new LinkedList<Integer>();
 
 	// Push element x onto stack.
-	// 这种方法虽然思路简单，但是考虑到stack作为容器的功能，push用到的会比pop多，所以应该进行改进，方式见implement stack
+	// 杩欑鏂规硶铏界劧鎬濊矾绠�鍗曪紝浣嗘槸鑰冭檻鍒皊tack浣滀负瀹瑰櫒鐨勫姛鑳斤紝push鐢ㄥ埌鐨勪細姣攑op澶氾紝鎵�浠ュ簲璇ヨ繘琛屾敼杩涳紝鏂瑰紡瑙乮mplement stack
 	// using queue
 	public void push(int x) {
 		while (!topQue.isEmpty()) {

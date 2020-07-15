@@ -16,7 +16,7 @@ public class ListNode {
 
 	/**
 	 * @param s
-	 *            ÀûÓÃ×Ö·û´®¹¹ÔìÁ´±í
+	 *            åˆ©ç”¨å­—ç¬¦ä¸²æ„é€ é“¾è¡¨
 	 */
 	public ListNode(String s) {
 		if (s == null || s.length() == 0)
@@ -32,7 +32,7 @@ public class ListNode {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see java.lang.Object#toString() ±ãÀûÒÔ¸Ã½ÚµãÎªÍ·½áµãµÄÁ´±í²¢Êä³ö
+	 * @see java.lang.Object#toString() ä¾¿åˆ©ä»¥è¯¥èŠ‚ç‚¹ä¸ºå¤´ç»“ç‚¹çš„é“¾è¡¨å¹¶è¾“å‡º
 	 */
 	@Override
 	public String toString() {

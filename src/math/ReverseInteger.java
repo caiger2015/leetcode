@@ -17,7 +17,7 @@ class Solution {
 	private Stack<Character> stack = new Stack<Character>();
 	private StringBuffer result;
 
-	// ÓÃÕ»´¦ÀíÌ«¹ı¸´ÔÓ£¬Õ»ÊÇÓÃÀ´¿ØÖÆÓÅÏÈ¼¶µÄ
+	// ç”¨æ ˆå¤„ç†å¤ªè¿‡å¤æ‚ï¼Œæ ˆæ˜¯ç”¨æ¥æ§åˆ¶ä¼˜å…ˆçº§çš„
 	public int reverse(int x) {
 
 		String str = Integer.toString(x);
@@ -30,12 +30,12 @@ class Solution {
 			sim = 1;
 			i++;
 		}
-		// ÕâÀï³ö¹ı´í£¬ÒòÎªelse¶ÔÓ¦µÄÊÇÉÏÒ»¸öif£¬ËùÒÔÈç¹ûÉÏÒ»Ìõ²»³ÉÁ¢£¬
-		// »á¶ÔsimÖØĞÂ¸³Öµ
+		// è¿™é‡Œå‡ºè¿‡é”™ï¼Œå› ä¸ºelseå¯¹åº”çš„æ˜¯ä¸Šä¸€ä¸ªifï¼Œæ‰€ä»¥å¦‚æœä¸Šä¸€æ¡ä¸æˆç«‹ï¼Œ
+		// ä¼šå¯¹simé‡æ–°èµ‹å€¼
 		// else {
 		// sim = 1;
 		// }
-		// StringBufferÊ¹ÓÃÊ±Òª³õÊ¼»¯´óĞ¡
+		// StringBufferä½¿ç”¨æ—¶è¦åˆå§‹åŒ–å¤§å°
 		result = new StringBuffer(str.length() - i);
 		for (; i < str.length(); i++) {
 			stack.push(str.charAt(i));
@@ -48,7 +48,7 @@ class Solution {
 		return (int) db * sim;
 	}
 
-	// ×ª»»³ÉStringBufferÀ´´¦ÀíÏûºÄ×ÊÔ´Ì«¶à
+	// è½¬æ¢æˆStringBufferæ¥å¤„ç†æ¶ˆè€—èµ„æºå¤ªå¤š
 	public int reverse2(int x) {
 		int sim = 0;
 		if (x < 0)
@@ -56,12 +56,12 @@ class Solution {
 		else
 			sim = 1;
 		// double result = x*sim;
-		// ÕâÀïdoubleÊÇË«½ø¶È¸¡µãÊı£¬×ª»»³ÉStringÊÇ"xxx.0"
-		// ËùÒÔreverse£¨£©Ö®ºóÊÇ¡°0.xxx¡±
-		long result = (long) x * sim;// ĞèÒªÏÔÊ¾×ª»»£¬·ñÔò»¹ÊÇ»áÒç³ö
+		// è¿™é‡Œdoubleæ˜¯åŒè¿›åº¦æµ®ç‚¹æ•°ï¼Œè½¬æ¢æˆStringæ˜¯"xxx.0"
+		// æ‰€ä»¥reverseï¼ˆï¼‰ä¹‹åæ˜¯â€œ0.xxxâ€
+		long result = (long) x * sim;// éœ€è¦æ˜¾ç¤ºè½¬æ¢ï¼Œå¦åˆ™è¿˜æ˜¯ä¼šæº¢å‡º
 		StringBuffer str = new StringBuffer(result + "");
 		// StringBuffer str = new StringBuffer(x*sim+"");
-		// tip£ºµ±x = int×îĞ¡ÖµÊ±£¬ËüµÄ¾ø¶ÔÖµÊÇint×î´óÖµ+1£¬Òç³öÁË£¡
+		// tipï¼šå½“x = intæœ€å°å€¼æ—¶ï¼Œå®ƒçš„ç»å¯¹å€¼æ˜¯intæœ€å¤§å€¼+1ï¼Œæº¢å‡ºäº†ï¼
 		StringBuffer str1 = str.reverse();
 		result = Long.valueOf(str1.toString());
 		if (result > Integer.MAX_VALUE || result < Integer.MIN_VALUE)
@@ -70,17 +70,17 @@ class Solution {
 
 	}
 
-	// ¿¼ÂÇÓÃÊıÑ§·½·¨À´´¦Àí£¬ÒòÎªÊı×Ö±¾Éí¾ÍÊÇÅÅĞòµÄ£¬
-	// ËùÒÔÖ»ĞèÒª¿¼ÂÇºÃ·ûºÅºÍÒç³öÎÊÌâ¾Í¿ÉÒÔÁË
-	// ÓÃÑ­»·À´½â¾öÎÊÌâ
+	// è€ƒè™‘ç”¨æ•°å­¦æ–¹æ³•æ¥å¤„ç†ï¼Œå› ä¸ºæ•°å­—æœ¬èº«å°±æ˜¯æ’åºçš„ï¼Œ
+	// æ‰€ä»¥åªéœ€è¦è€ƒè™‘å¥½ç¬¦å·å’Œæº¢å‡ºé—®é¢˜å°±å¯ä»¥äº†
+	// ç”¨å¾ªç¯æ¥è§£å†³é—®é¢˜
 	public int reverse3(int x) {
 		long res = 0;
 		if (x == Integer.MIN_VALUE)
 			return 0;
 		int temp = Math.abs(x);
 		while (temp > 0) {
-			res = res * 10 + temp % 10;// È¡Óà·½Ê½È¡×îºóÒ»Î»
-			temp /= 10;// ÉáÈ¥×îºóÒ»Î»
+			res = res * 10 + temp % 10;// å–ä½™æ–¹å¼å–æœ€åä¸€ä½
+			temp /= 10;// èˆå»æœ€åä¸€ä½
 		}
 		if (res > Integer.MAX_VALUE)
 			return 0;

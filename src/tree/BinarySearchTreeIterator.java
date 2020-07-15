@@ -26,12 +26,12 @@ public class BinarySearchTreeIterator {
 
 	}
 
-	// ´æ´¢Ê÷ÖĞµÄÃ¿¸ö½Úµã
+	// å­˜å‚¨æ ‘ä¸­çš„æ¯ä¸ªèŠ‚ç‚¹
 	private List<Integer> valList = new LinkedList<Integer>();
 	private int index = 0;
 
-	// ÖĞĞò±éÀúBST½á¹ûÎªÉıĞòÅÅÁĞ,µ«¿Õ¼ä¸´ÔÓ¶ÈÎªO(n)£¬ÒòÎª´æ´¢ÁËËùÓĞµÄ½Úµã¡£
-	// ÒòÎªÔÚµ÷ÓÃnext()µÄÊ±ºòÑ°ÕÒµÄÊÇÏÂÒ»¸ö½Úµã£¬ËùÒÔÖ®Ç°µÄ½Úµã¿ÉÒÔÉ¾³ı£¬½ÚÔ¼¿Õ¼ä¡£
+	// ä¸­åºéå†BSTç»“æœä¸ºå‡åºæ’åˆ—,ä½†ç©ºé—´å¤æ‚åº¦ä¸ºO(n)ï¼Œå› ä¸ºå­˜å‚¨äº†æ‰€æœ‰çš„èŠ‚ç‚¹ã€‚
+	// å› ä¸ºåœ¨è°ƒç”¨next()çš„æ—¶å€™å¯»æ‰¾çš„æ˜¯ä¸‹ä¸€ä¸ªèŠ‚ç‚¹ï¼Œæ‰€ä»¥ä¹‹å‰çš„èŠ‚ç‚¹å¯ä»¥åˆ é™¤ï¼ŒèŠ‚çº¦ç©ºé—´ã€‚
 	public BinarySearchTreeIterator(TreeNode root) {
 		if (root == null)
 			return;
@@ -49,7 +49,7 @@ public class BinarySearchTreeIterator {
 	}
 
 	/** @return whether we have a next smallest number */
-	// Ã¿´Îµ÷ÓÃhasNext£¬Èô»¹ÓĞÏÂÒ»¸öÔòÖ¸ÕëÏòºóÒÆ¶¯Ò»Î»
+	// æ¯æ¬¡è°ƒç”¨hasNextï¼Œè‹¥è¿˜æœ‰ä¸‹ä¸€ä¸ªåˆ™æŒ‡é’ˆå‘åç§»åŠ¨ä¸€ä½
 	public boolean hasNext() {
 		if (index < valList.size()) {
 			index++;
@@ -59,17 +59,17 @@ public class BinarySearchTreeIterator {
 	}
 
 	/** @return the next smallest number */
-	// ·µ»ØµÄÊÇÖ¸ÕëµÄÇ°Ò»¸öÔªËØ
+	// è¿”å›çš„æ˜¯æŒ‡é’ˆçš„å‰ä¸€ä¸ªå…ƒç´ 
 	public int next() {
 		return valList.get(index - 1);
 	}
 }
 class BinarySearchTreeIterator2 {
 
-	// Ã¿´Î¸üĞÂÕ»ÀïµÄ½Úµã£¬±£Ö¤Õ»¶¥µÄ½áµãÊÇÏÂÒ»¸öĞ¡µÄ£¬´ËÊ±¿Õ¼ä¸´ÔÓ¶ÈÎªO(h)
+	// æ¯æ¬¡æ›´æ–°æ ˆé‡Œçš„èŠ‚ç‚¹ï¼Œä¿è¯æ ˆé¡¶çš„ç»“ç‚¹æ˜¯ä¸‹ä¸€ä¸ªå°çš„ï¼Œæ­¤æ—¶ç©ºé—´å¤æ‚åº¦ä¸ºO(h)
 	private Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
 	private TreeNode cur = null;
-	//³õÊ¼»¯Ê±°´ÕÕÖĞĞòµÄ·½Ê½·ÅÈë½Úµãµ½Õ»ÖĞÖ±µ½×îĞ¡µÄ½Úµã£¨×î×ó¶Ë£©µ½´ïÕ»¶¥£¬±£Ö¤´ÓÕ»ÀïÊä³ö½ÚµãÊ±ÊÇ´Ó×îĞ¡µÄ¿ªÊ¼µÄ¡£
+	//åˆå§‹åŒ–æ—¶æŒ‰ç…§ä¸­åºçš„æ–¹å¼æ”¾å…¥èŠ‚ç‚¹åˆ°æ ˆä¸­ç›´åˆ°æœ€å°çš„èŠ‚ç‚¹ï¼ˆæœ€å·¦ç«¯ï¼‰åˆ°è¾¾æ ˆé¡¶ï¼Œä¿è¯ä»æ ˆé‡Œè¾“å‡ºèŠ‚ç‚¹æ—¶æ˜¯ä»æœ€å°çš„å¼€å§‹çš„ã€‚
 	public BinarySearchTreeIterator2(TreeNode root) {
 		cur = root;
 		while(cur != null){
@@ -79,14 +79,14 @@ class BinarySearchTreeIterator2 {
 	}
 
 	/** @return whether we have a next smallest number */
-	//Êä³öÕ»²»Îª¿Õ±íÊ¾»¹ÓĞÏÂÒ»¸ö
+	//è¾“å‡ºæ ˆä¸ä¸ºç©ºè¡¨ç¤ºè¿˜æœ‰ä¸‹ä¸€ä¸ª
 	public boolean hasNext() {
 		return !stack.isEmpty();
 	}
 
 	/** @return the next smallest number */
-	// ·µ»ØµÄÊÇÖ¸ÕëµÄÇ°Ò»¸öÔªËØ
-	//ÆäÊµ¾ÍÊÇ°ÑÒ»´ÎÍêÕûµÄÖĞĞò±éÀú²ğ·Ö¿ªÁË£¬µ«ÊÇ½ÚÔ¼ÁË¿Õ¼ä
+	// è¿”å›çš„æ˜¯æŒ‡é’ˆçš„å‰ä¸€ä¸ªå…ƒç´ 
+	//å…¶å®å°±æ˜¯æŠŠä¸€æ¬¡å®Œæ•´çš„ä¸­åºéå†æ‹†åˆ†å¼€äº†ï¼Œä½†æ˜¯èŠ‚çº¦äº†ç©ºé—´
 	public int next() {
 		int res = 0;
 		if(!stack.isEmpty()){

@@ -30,13 +30,13 @@ public class BinaryTreeZigzagLevelOrderTraversal {
 		System.out.print(zigzagLevelOrder(ConstructTree.constructTree("1#23#456")));
 	}
 	/*
-	 * Öğ²ã±éÀú£¬ĞèÒª¼ÇÂ¼µ±Ç°²ãºÍÏÂÒ»²ãµÄ½áµãÊı£¬Ã»Íê³ÉÒ»²ã²ãÊı¼Ó1£¬ÆæÊı²ãÕıĞò£¬Å¼Êı²ã·´Ğò¡£
+	 * é€å±‚éå†ï¼Œéœ€è¦è®°å½•å½“å‰å±‚å’Œä¸‹ä¸€å±‚çš„ç»“ç‚¹æ•°ï¼Œæ²¡å®Œæˆä¸€å±‚å±‚æ•°åŠ 1ï¼Œå¥‡æ•°å±‚æ­£åºï¼Œå¶æ•°å±‚ååºã€‚
 	 */
 	public static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
 		if(root == null)
 			return null;
 		List<List<Integer>> res = new LinkedList<List<Integer>>();
-		//Deque½Ó¿ÚÓĞºó½øÏÈ³öµÄ¶ÑÕ»¹¦ÄÜ
+		//Dequeæ¥å£æœ‰åè¿›å…ˆå‡ºçš„å †æ ˆåŠŸèƒ½
 		Deque<TreeNode> que = new LinkedList<TreeNode>();
 		TreeNode temp = root;
 		int now = 1,next = 0,levelCount = 1;
@@ -64,15 +64,15 @@ public class BinaryTreeZigzagLevelOrderTraversal {
 		return res;
 	}
 	/**
-	 * @param levelList ¶ş²æÊ÷µÄÒ»²ã
-	 * @param levelCount	¶ş²æÊ÷µÄ²ãÊı
-	 * @param val	ÒªÌí¼ÓµÄÔªËØ
+	 * @param levelList äºŒå‰æ ‘çš„ä¸€å±‚
+	 * @param levelCount	äºŒå‰æ ‘çš„å±‚æ•°
+	 * @param val	è¦æ·»åŠ çš„å…ƒç´ 
 	 */
 	private static void addTreeNode(LinkedList<Integer> levelList, int levelCount,	int val) {
-		//ÆæÊı²ãÕıĞòÌí¼Ó
+		//å¥‡æ•°å±‚æ­£åºæ·»åŠ 
 		if((levelCount&1) == 1)
 			levelList.add(val);
-		//Å¼Êı²ãÄæĞòÌí¼Ó
+		//å¶æ•°å±‚é€†åºæ·»åŠ 
 		else
 			levelList.push(val);
 	}

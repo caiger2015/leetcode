@@ -28,8 +28,8 @@ class MyQueue {
 	LinkedList<Integer> top = new LinkedList<Integer>();
 	LinkedList<Integer> data = new LinkedList<Integer>();
 
-	// ÀûÓÃstack¿ÉÒÔ»»Ë³ĞòµÄ×÷ÓÃ£¬
-	// topÕ»°´ÕÕqueueµÄË³Ğò´æ´¢Êı¾İ£¬dataÕ»°´ÕÕstackµÄË³Ğò´æ´¢Êı¾İ£¬Ã¿µ±topÖĞÃ»ÓĞÊı¾İÊ±£¬½«dataÖĞµÄÊı¾İµ¹ÈëtopÖĞ¡£
+	// åˆ©ç”¨stackå¯ä»¥æ¢é¡ºåºçš„ä½œç”¨ï¼Œ
+	// topæ ˆæŒ‰ç…§queueçš„é¡ºåºå­˜å‚¨æ•°æ®ï¼Œdataæ ˆæŒ‰ç…§stackçš„é¡ºåºå­˜å‚¨æ•°æ®ï¼Œæ¯å½“topä¸­æ²¡æœ‰æ•°æ®æ—¶ï¼Œå°†dataä¸­çš„æ•°æ®å€’å…¥topä¸­ã€‚
 	// Push element x to the back of queue.
 	public void push(int x) {
 		data.push(x);

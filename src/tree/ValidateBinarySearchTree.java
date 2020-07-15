@@ -24,17 +24,17 @@ public class ValidateBinarySearchTree {
 		System.out.print(isValidBST1(ConstructTree.constructTree("5382469")));
 	}
 
-	// ÓÃ×îĞ¡intÊ±È¡µÈµÄÇé¿öÒªµ¥¶À¿¼ÂÇ
+	// ç”¨æœ€å°intæ—¶å–ç­‰çš„æƒ…å†µè¦å•ç‹¬è€ƒè™‘
 	// private static int temp = Integer.MIN_VALUE;
-	// ÓÃInteger°ü×°int£¬³õÊ¼Çé¿öÎª¿Õ¿ÉÒÔµ¥¶ÀÅĞ¶Ï
+	// ç”¨IntegeråŒ…è£…intï¼Œåˆå§‹æƒ…å†µä¸ºç©ºå¯ä»¥å•ç‹¬åˆ¤æ–­
 	private static Integer temp = null;
 
 	public static boolean isValidBST(TreeNode root) {
 		if (root == null)
 			return true;
 		/*
-		 * BSTÖĞĞò±éÀú½á¹ûÎªÉıĞò£¬°´ÕÕÖĞĞò½á¹¹±éÀúBST±È½Ïµ±Ç°½áµãºÍÉÏÒ»¸öÊä³ö½áµãµÄ´óĞ¡£¬
-		 * ÀûÓÃÒ»¸öÍâ²¿±äÁ¿À´´æ´¢ÉÏÒ»¸ö½áµãÖµ£¬ÔÚµİ¹éÊ±¸üĞÂÕâ¸ö±äÁ¿¼´¿É¡£ÓÃµ¥¸ö±äÁ¿µÄ¸üĞÂ´úÌæÁËÑ­»··½·¨ÖĞ¶ÑÕ»µÄ×÷ÓÃ£¬½ÚÊ¡ÁË¿Õ¼ä£¬È±µãÊÇÒªÓÃµ½Íâ²¿±äÁ¿
+		 * BSTä¸­åºéå†ç»“æœä¸ºå‡åºï¼ŒæŒ‰ç…§ä¸­åºç»“æ„éå†BSTæ¯”è¾ƒå½“å‰ç»“ç‚¹å’Œä¸Šä¸€ä¸ªè¾“å‡ºç»“ç‚¹çš„å¤§å°ï¼Œ
+		 * åˆ©ç”¨ä¸€ä¸ªå¤–éƒ¨å˜é‡æ¥å­˜å‚¨ä¸Šä¸€ä¸ªç»“ç‚¹å€¼ï¼Œåœ¨é€’å½’æ—¶æ›´æ–°è¿™ä¸ªå˜é‡å³å¯ã€‚ç”¨å•ä¸ªå˜é‡çš„æ›´æ–°ä»£æ›¿äº†å¾ªç¯æ–¹æ³•ä¸­å †æ ˆçš„ä½œç”¨ï¼ŒèŠ‚çœäº†ç©ºé—´ï¼Œç¼ºç‚¹æ˜¯è¦ç”¨åˆ°å¤–éƒ¨å˜é‡
 		 */
 		boolean left = isValidBST(root.left);
 		if (temp == null || root.val > temp)
@@ -46,7 +46,7 @@ public class ValidateBinarySearchTree {
 	}
 
 	/*
-	 * Ñ­»··½Ê½ÖĞĞò±éÀúBST£¬¼ÇÂ¼ÉÏÒ»¸ö³öÕ»½áµãÖµÎªmin£¬±È½ÏÓëµ±Ç°³öÕ»½áµãµÄ´óĞ¡
+	 * å¾ªç¯æ–¹å¼ä¸­åºéå†BSTï¼Œè®°å½•ä¸Šä¸€ä¸ªå‡ºæ ˆç»“ç‚¹å€¼ä¸ºminï¼Œæ¯”è¾ƒä¸å½“å‰å‡ºæ ˆç»“ç‚¹çš„å¤§å°
 	 */
 	public static boolean isValidBST1(TreeNode root) {
 		if (root == null)

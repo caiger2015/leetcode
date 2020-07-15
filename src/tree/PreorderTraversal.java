@@ -34,14 +34,14 @@ public class PreorderTraversal {
 		preOrder(p.right, res);
 	}
 
-	// 循环实现
+	// 寰幆瀹炵幇
 	public List<Integer> preorder_Traversal(TreeNode root) {
 		List<Integer> res = new ArrayList<Integer>();
 		if (root == null)
 			return res;
 		Stack<TreeNode> stack = new Stack<TreeNode>();
 		TreeNode temp = root;
-		// 当temp == root时，stack为空
+		// 褰搕emp == root鏃讹紝stack涓虹┖
 		while (temp != null || !stack.isEmpty()) {
 			while (temp != null) {
 				res.add(temp.val);

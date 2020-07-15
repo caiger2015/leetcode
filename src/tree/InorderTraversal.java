@@ -27,7 +27,7 @@ public class InorderTraversal {
 		preOrder(p.right, res);
 	}
 
-	// Ñ­»·ÊµÏÖ
+	// å¾ªç¯å®ç°
 	public List<Integer> inorder_Traversal(TreeNode root) {
 		List<Integer> res = new ArrayList<Integer>();
 		if (root == null)
